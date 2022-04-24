@@ -41,11 +41,11 @@ comparisons, correlation, and regression.
 
 Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 - developing their critical thinking and communication skills through activities that teach students how to: 
-	- state problems clearly;
-	- articulate assumptions;
-	- understand the importance of precise definitions, and reason logically to conclusions; 
-	- identify and model essential features of a complex situation, modify models as needed for traceability, and draw valuable conclusions; and 
-	- use and compare analytical, visual, and numeracy methods.
+	- state problems clearly,
+	- articulate assumptions,
+	- understand the importance of precise definitions, and reason logically to conclusions, 
+	- identify and model essential features of a complex situation, modify models as needed for traceability, and draw valuable conclusions, and 
+	- use and compare analytical, visual, and numeracy methods;
 
 - linking theory to practice by being exposed to a variety of contemporary applications in mathematics that motivate and illustrate the concepts they are learning, as well as become aware of connections to other fields (both within and outside of mathematics) and learn to apply mathematical concepts to problems in those fields;
 - developing mathematical independence and participate in open-ended inquiry;
