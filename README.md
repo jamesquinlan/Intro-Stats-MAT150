@@ -8,7 +8,7 @@ In this course, students apply principles of research design and statistics to a
 
 ## Objectives
 
-In this course, you will learn fundamentals of graphic and numeric data analysis, inferences about population means, and hypothesis testing that you can use to answer research questions in a variety of experimental situations.  You will also learn how to use a comprehensive statistical software called R (RStudio Cloud) to conduct your analyses, and how to interpret, organize, and explain your results and conclusions in written and verbal formats.This course fulfills a requirement in the applied mathematics major and many other major programs.  It can also be used for a mathematics minor.
+In this course, you will learn fundamentals of graphic and numeric data analysis, inferences about population means, and hypothesis testing that you can use to answer research questions in a variety of experimental situations.  You will also learn how to use a comprehensive statistical software called R (RStudio Cloud) to conduct your analyses, and how to interpret, organize, and explain your results and conclusions in written and verbal formats.  This course fulfills a requirement in the applied mathematics major, data science major, and many other major programs.  It can also be used for a mathematics minor.
 
 ## Textbook
 
