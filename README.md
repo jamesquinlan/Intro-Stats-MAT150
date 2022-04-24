@@ -42,12 +42,8 @@ comparisons, correlation, and regression.
 This course is part of the Core Curriculum that is taken by undergraduates and provides a foundation in key themes in the liberal arts.  It addresses the Quantitative Reasoning (QR) component of the Core and the following QR learning outcomes.  Upon successful completion of this course, students will be able to:
 
 1. Read and analyze data and draw inferences.
-
 2. Formulate and solve real-world problems using mathematical and/or statistical models.
-
 3. Communicate quantitative information using symbolic, numeric, graphic, and verbal representations.
-
 4. Judge the soundness and accuracy of quantitative results.
-
 5. Make informed decisions using appropriate digital tools and resources.
 
