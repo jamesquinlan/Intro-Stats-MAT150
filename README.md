@@ -1,10 +1,11 @@
-# Introduction to Statistics
+# Introduction to Statistics (for Life Sciences)
 
 Course (MAT150) taught at University of New England. 
 
 ## Course Description
 
-In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use statistical software to examine data graphically and perform statistical analyses.  Prerequisite: LAC 022 or mathematics placement L4.
+In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use statistical software to examine data graphically and perform statistical analyses.  
+
 
 ## Objectives
 
@@ -51,6 +52,22 @@ Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 - developing mathematical independence and participate in open-ended inquiry;
 - operating current technologies; and
 - learning to read, interpret, analyze, and write proofs.
+
+## Topics
+
+1. The role of statistics and the data analysis process
+2. Data collection
+3. Visual descriptions of data 
+4. Numerical descriptions of data
+5. Summarizing bivariate data
+6. Probability
+7. Population distributions
+8. Sample variation and sample distributions
+9. Estimation
+10. Hypothesis testing
+11. Comparing two populations
+12. Ananlysis of variance (ANOVA)
+
 
 
 ## Core Curriculum
