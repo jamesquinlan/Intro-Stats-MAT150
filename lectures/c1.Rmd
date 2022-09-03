@@ -65,7 +65,7 @@ each day for 200 days.
 
 
 ```{r}
-load('../data/1.2.rda')
+load('../data/examples/1.2.rda')
 hist(water, col = "#668899", xlab = "Average Contaimination", main = "Water Quality")
 ```
 
@@ -205,7 +205,7 @@ forms an entire interval on the number line.
 3. Create plots
 
 ```{r}
-load("../data/examples/ex1_6.rda")
+load("../data/examples/1.6.rda")
 
 # rename column
 names(df)[3] = "Crimes"
