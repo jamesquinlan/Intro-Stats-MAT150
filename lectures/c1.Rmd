@@ -1,0 +1,298 @@
+---
+title: "MAT150 - Chapter 1"
+author: "The Role of Statistics and Data Analysis Process"
+date: '09/08/2022'
+output: html_document
+---
+
+
+<style>
+p{font-size:15px;}
+h1{font-weight: bold;}
+h2{color: #336699;}
+h3{color: #666666;}
+ul{font-size:14px;}
+ol{font-size:15px;}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+**Statistics** is the scientific discipline that provides methods to help us make sense of data. 
+
+---
+
+
+
+<!----------------------------------------------------------------------------->
+## 1.1. Why Study Statistics?
+
+To be an informed consumer of reports such as those described above, you must be able to do the following:
+
+* Extract information from tables, charts, and graphs.
+* Follow numerical arguments.
+* Understand the basics of how data should be gathered, summarized, and analyzed to draw statistical conclusions.
+
+> **Goal**: understand and use data to make decisions.  
+
+- Decide whether existing data is adequate or whether additional information is required.
+- If necessary, collect more information in a reasonable and thoughtful way.
+- Summarize the available data in a useful and informative manner.
+- Analyze the available data.
+- Draw conclusions, make decisions, and assess the risk of an incorrect decision.
+
+Statistical methods allow us to collect, describe, analyze and draw conclusions from data.
+
+
+
+
+
+
+<!----------------------------------------------------------------------------->
+## 1.2. The Nature and Role of Variability
+
+Understanding variability is the key to learning from data.
+
+
+**Example**: In efforts to monitor water quality, a specialist selects five water
+specimens each day.  The concentration of contaminants in parts per million (ppm)
+is measured and recorded.  The _histogram_ below summarizes the average contamination
+each day for 200 days.  
+
+
+```{r}
+load('../data/1.2.rda')
+hist(water, col = "#668899", xlab = "Average Contaimination", main = "Water Quality")
+```
+
+
+##### Consider
+If there was a reported chemical spill from a industrial plant 1 mile away and 
+the recorded average of the 5 samples was 15 ppm, would you interpret this as 
+evidence that the water is affected by the spill?  What about 17 ppm? 22 ppm?
+
+
+---
+
+
+
+
+<!----------------------------------------------------------------------------->
+## 1.3. Statistics and the Data Analysis Process
+Statistics involves collecting, summarizing, and analyzing data.
+
+
+The **data analysis process** can be organized into the following six steps:
+
+1. **Understanding the nature of the problem**. Effective data analysis requires 
+an understanding of the research problem. We must know the goal of the research 
+and what questions we hope to answer. It is important to have a clear direction 
+before gathering data to ensure that we will be able to answer the questions of 
+interest using the data collected.
+
+2. **Deciding what to measure and how to measure it**. The next step in the 
+process is deciding what information is needed to answer the questions of interest. 
+In some cases, the choice is obvious (for example, in a study of the relationship 
+between the weight of a Division I football player and position played, you would 
+need to collect data on player weight and position), but in other cases the choice 
+of information is not as straightforward (for example, in a study of the relationship 
+between preferred learning style and intelligence, how would you define learning 
+style and measure it and what measure of intelligence would you use?). It is 
+important to carefully define the variables to be studied and to develop appropriate 
+methods for determining their values.
+
+3. **Data collection**. The data collection step is crucial. The researcher must 
+first decide whether an existing data source is adequate or whether new data must 
+be collected. Even if a decision is made to use existing data, it is important to 
+understand how the data were collected and for what purpose, so that any resulting 
+limitations are also fully understood and judged to be acceptable. If new data are 
+to be collected, a careful plan must be developed, because the type of analysis 
+that is appropriate and the subsequent conclusions that can be drawn depend on 
+how the data are collected.
+
+4. **Data summarization and preliminary analysis**. After the data are collected, 
+the next step usually involves a preliminary analysis that includes summarizing 
+the data graphically and numerically. This initial analysis provides insight into 
+important characteristics of the data and can provide guidance in selecting 
+appropriate methods for further analysis.
+
+5. **Formal data analysis**. The data analysis step requires the researcher to 
+select and apply statistical methods. Much of this textbook is devoted to methods 
+that can be used to carry out this step.
+
+6. **Interpretation of results**. Several questions should be addressed in this 
+final step. Some examples are: What can we learn from the data? What conclusions 
+can be drawn from the analysis? and How can our results guide future research? 
+The interpretation step often leads to the formulation of new research questions, 
+which, in turn, leads back to the first step. In this way, good data analysis is 
+often an iterative process.
+
+---
+
+
+
+
+<!----------------------------------------------------------------------------->
+### Definitions
+
+> The  **population** of interest is the entire collection of individuals or objects about which information is desired. 
+
+> A **sample** is a subset of the population, selected for study.
+
+> **Descriptive statistics** is the branch of statistics that includes methods for organizing and summarizing data. 
+
+> **Inferential statistics** is the branch of statistics that involves generalizing from a sample to the population from which the sample was selected and assessing the reliability of such generalizations.
+
+---
+
+
+
+
+
+
+<!----------------------------------------------------------------------------->
+### Evaluating a Research Study
+
+The six data analysis steps can also be used as a guide for evaluating published research studies. 
+The following questions should be addressed as part of a study evaluation:
+
+1. What were the researchers trying to learn? What questions motivated their research?
+2. Was relevant information collected? Were the right things measured?
+3. Were the data collected in a sensible way?
+4. Were the data summarized in an appropriate way?
+5. Was an appropriate method of analysis used, given the type of data and how the data were collected?
+6. Are the conclusions drawn by the researchers supported by the data analysis?
+
+
+
+
+---
+
+
+
+
+<!----------------------------------------------------------------------------->
+## 1.4 Types of Data and Some Simple Graphical Displays
+
+### Definitions
+
+> A **univariate** data set consists of observations on a single characteristic.
+
+> **Categorical (or qualitative)** is a univariate data set if the individual 
+observations are categorical responses (e.g., favorite color: red, green, blue).
+
+> **Numerical (or quantitative)** is a univariate data set if each observation 
+is a number. Warning: often categorical data is represented by a number (e.g., 0 or 1).
+
+> A numerical variable results in **discrete** data if the possible values of the 
+variable correspond to isolated points on the number line.
+
+> A numerical variable results in **continuous** data if the set of possible values 
+forms an entire interval on the number line.
+
+
+---
+
+
+## R Skills
+
+1. Navigate file system
+2. Load data
+3. Create plots
+
+```{r}
+load("../data/examples/ex1_6.rda")
+
+# rename column
+names(df)[3] = "Crimes"
+```
+
+### Bar Chart (`barplot`)
+
+Use with **categorical data**
+
+
+
+**Example**
+
+```{r echo=TRUE}
+# plot(df$enrollment,df$Crimes, xlab = "Enrollment", ylab = "Crimes")
+barplot(df$Crimes, 
+        names.arg = df$University.College, 
+        main="Crimes",    
+        ylab="Freqency",  
+        las=2, 
+        cex.names = 0.7, 
+        col= c("#3CA0D0")
+        )
+
+```
+
+---
+
+
+**Example**
+
+```{r}
+helmets = data.frame(Category = c("None", "Noncompliant", "Compliant"), Frequency = c(731,153,816))
+
+barplot(helmets$Frequency, names.arg = helmets$Category, col = rainbow(3),
+        xlab = "Category",
+        ylab = "Frequency") 
+```
+
+
+
+
+
+**Example** (Graduation Rates): Graduation rates for 61 NCAA Men's Division 1 
+basketball teams that made it to the tournament along with graduation rates of all
+athletes from the associated school were reported.  
+
+```{r}
+grad_rates = read.csv("../data/examples/ex_110.csv")
+head(grad_rates)
+```
+```{r}
+stripchart(grad_rates$BB,  pch = 21, col = "#336699", bg="lightgreen")
+```
+
+
+
+
+<!----------------------------------------------------------------------------->
+## Exercises
+
+1.1 Give a brief definition of the terms *descriptive statistics* and *inferential statistics*.
+
+**Answer**: See page 7.  
+
+ 
+1.5.  A university of 15000 students is interested in the proportion of students
+favor changing grade scheme.  Two hundred students are sampled.  What is the
+population of interest and what is the group of students that constitue the sample?
+
+**Answer**: Population is all 15000 students and the sample consists of 200 of them.
+
+
+---
+
+
+
+
+
+
+ 
+
+
+
+<!----------------------------------------------------------------------------->
+#### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The exploration & analysis of data*. Cengage Learning.
+
+

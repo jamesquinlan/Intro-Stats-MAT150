@@ -1,0 +1,29 @@
+---
+title: "Assignment 1"
+author: "Quinlan"
+date: "2022-09-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Directions
+
+Complete the homework assignment by writing the problem statement, then indicate
+your answer either using **bold face**.  For example, if 1.1 was assigned, then 
+it would look something like show below.
+
+---
+
+**1.1** Give a brief definition of the terms *descriptive statistics* and *inferential statistics*.
+
+**Descriptive Statistics**:  a branch of statistics that includes methods for summarizing data.
+
+**Inferential statistics**: a branch of statistics for generalizing from a sample (to the population for which the sample was selected).  
+
+
+---
+
+
