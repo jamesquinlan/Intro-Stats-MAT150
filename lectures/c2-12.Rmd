@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-
+<!----------------------------------------------------------------------------->
 # Statistical Studies: Observation and Experimentation
 
 Both can be used to compare groups, but in the experimental design, the researcher controls the variable(s). 
@@ -121,6 +121,9 @@ Researchers compared babies born to mothers with diabetes to babies born to moth
 
 
 
+
+
+<!----------------------------------------------------------------------------->
 # Sampling 
 
 **Goal** of many studies are to generalize from a sample to the population.
@@ -142,7 +145,7 @@ Sampling is necessary because of:
 
 
 
-
+<!----------------------------------------------------------------------------->
 ## Sampling Bias
 
 Sample differs from population in a systematic way.  
@@ -163,9 +166,6 @@ Sample differs from population in a systematic way.
 
 
 
-
-
-
 #### Nonresponse bias
 
 > Not all selected individual respond
@@ -176,6 +176,9 @@ Sample differs from population in a systematic way.
 ---
 
 
+
+
+<!----------------------------------------------------------------------------->
 ## Random Sampling
 
 > A **simple random sample of size $n$** is a sample in which every set of size $n$ has equal chances of being selected. **Note**: if every individual has equal chances does not necessarily mean it is a simple random sample.  
@@ -214,6 +217,8 @@ sample(1:6,4,replace = T)
 ---
 
 
+
+<!----------------------------------------------------------------------------->
 ### Sampling Size
 
 Sample size does **not** have to be large to be accurate.  Critics often wonder how such a small sample can reflect the opinions of voters.  These critics do not understand the **power of random selection**.  
@@ -251,6 +256,8 @@ Amazing!!!!
 ---
 
 
+
+<!----------------------------------------------------------------------------->
 ### Stratified Random Sample
 
 The population is divided into a non-overlapping subgroups (called **strata**),
@@ -269,6 +276,9 @@ and (4) all others.
 
 ---
 
+
+
+<!----------------------------------------------------------------------------->
 ### Cluster Sampling
 
 Divides the population of interest into nonoverlapping subgroups (called **clusters**).
@@ -285,6 +295,10 @@ Additionally, *all* members of a cluster are included.
 
 ---
 
+
+
+
+<!----------------------------------------------------------------------------->
 ### Systematic sampling
 
 A procedure in which $k$ is selected, then one sample within the first $k$ are
@@ -300,6 +314,10 @@ a bias (not representative).
 
 ---
 
+
+
+
+<!----------------------------------------------------------------------------->
 ### Convenience Sampling
 
 **Never do this**.  
