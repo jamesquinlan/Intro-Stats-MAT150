@@ -1,0 +1,85 @@
+---
+title: "Homework-2"
+output: html_document
+date: "2022-09-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questions
+
+**1.12** Classify as categorical or numerical.  If numerical, determine whether
+it is discrete or continuous. 
+
+a. Number of students in a class of 35 who turn in a term paper before the due date.
+
+**Numerical/Discrete**
+
+b. Gender of the next baby born at a particular hospital.
+
+**Categorical**
+
+c. Amount of fluid (in ounces) dispensed by a machine used to fill bottles with soda pop.
+
+**Numerical/continuous**
+
+d. Thickness of the gelatin coating of a vitamin E capsule.
+
+**Numerical/continuous**
+
+e. Birth order classification (only child, firstborn, middle child, lastborn) of
+a math major.
+
+**Categorical**
+
+---
+
+**1.13** Classify each of the following variables as categorical or numerical.
+
+a. Brand of computer: **categorical**
+b. State of birth: **categorical**
+c. Price of a textbook: **numerical**
+d. Concentration of a contaminant: **numerical**
+e. Zip code: **categorical**
+f. Actual weight of coffee: **numerical**
+
+---
+
+**1.15** For each numerical variable, state whether it is discrete or continuous.
+
+a. Length of rattlesnake: **continuous**
+b. Altitude: **continuous**
+c. Distance from ...: **continuous**
+d. Price per gallon of gas: **discrete** (choosing discrete since $3.91234 isn't possible). 
+
+
+---
+
+
+**1.18** The following relative frequency distribution summarizing student responses 
+to the question: "If you could make your college choice over, would you still
+choose to enroll at your current college?"
+
+| Response       | Freq  |
+|:--------------|:-----|
+| Definitely Yes | 0.447 |
+| Probably Yes   | 0.373 |
+| Probably no    | 0.134 |
+| Definitely no  | 0.046 |
+
+```{r}
+# Create data frame from table above
+choice = data.frame(
+  Response = c("Definitely Yes", "Probably Yes", "Probably No", "Definitely No"),
+  Freq = c(0.447, 0.373, 0.134, 0.046)
+)
+```
+
+Make barplot:
+```{r}
+barplot(choice$Freq, names.arg = choice$Response)
+```
+
+---
