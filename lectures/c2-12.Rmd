@@ -1,0 +1,323 @@
+---
+title: "Statistical Studies and Sampling"
+author: "MAT150 - Stats for Life Sciences"
+date: "James Quinlan"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Statistical Studies: Observation and Experimentation
+
+Both can be used to compare groups, but in the experimental design, the researcher controls the variable(s). 
+
+
+
+#### Consider
+Hitting a child and their IQ.  Is there a relationship?  A cause-and-effect?
+In other words, does spanking a child lower their IQ?  At least one study says YES.
+What do you think?  Doesn't matter what you think, what does the data say?  More importantly, **how was the data collected and the study designed**?  
+
+
+## Observational vs. Experimental Studies
+
+> **Definition**: A study is an **observational study** if the investigator observes characteristics of a sample selected from one or more existing populations.  The <u>goal</u> is usually to draw conclusions about the corresponding population or about the differences between two or more populations.  It is important to sample in such a way to represent the population understudy.
+
+#### Example:
+A researcher collects data in a urban center to determine whether age and attitude toward abortion are related.  
+
+#### Example:
+A researcher wants to estimate the average bite strength of white sharks in Casco Bay in pounds per square inch (PSI).  
+
+#### Example:
+A researcher wants to determine whether 
+
+
+
+In an observational study, it is _impossible_ to draw cause-and-effect conclusions because the researcher cannot rule out (control) the possibility that the observed effect is due to a **confounding variable**.
+
+
+> **Definition**: An **confounding variable** is one that is related to both: (i) group membership and (ii) the response variable of interest.
+
+
+#### Example: Daily vitamins and health
+
+Does taking daily vitamins lead to better health?  Perhaps already health people are the ones that take vitamins.  In this case, taking daily vitamins is a confounding variable that is related to (the response variable) health **and** (probably) membership of health individuals.   
+
+
+#### Example: Flu shot & Death
+
+Are people 65+ that get a flu shot less likely to die?  One study says "yes", but it was also reported that those same people are less likely to die of other causes too.  Perhaps people that get flu shots tend to take better care of themselves or have better access to health care (in general).  
+
+#### Example:
+
+Friedmann et al. (2003) reported higher variability in heart rate (a good thing) among patients that suffered a heart attack that had dogs.  Could it be the dog, or the fact that dog owners get more exercise because they walk the dog?  
+
+
+
+
+
+> **Definition**: An **experimental study** is one in which the researcher observes how a response variable behaves when one (or more) expanatory variables, also called factors, are manipulated.  The <u>goal</u> is to determine the effect of the explanatory variable on the response variable (i.e., *cause-and-effect*).  
+
+
+
+##### Consider (above): Spanking kids and IQ
+
+The researchers did not control who spanked their kids, nor did they randomly assign kids to a spanking group and non-spanking group; therefore it is an **observational** study.  Furthermore, drawing a *cause-and-effect* conclusion is not appropriate in this case because of the observational nature of the study.  Any claims to do so are wrong!  NOTE: this is one of the most common fallacies.
+
+What could be some confounding variables in the case of spanking?  Home environment? Parent's education level?
+
+
+
+## Drawing Conclusions from Studies
+
+
+| **Study**                                                      | **Generalize** | **Draw cause-n-effect** |
+|:----------------------------------------------------------------|:----------------|:-------------------------|
+| Observational study with random sample                         | Yes            | No                      |
+| Observational study without random sample                      | No             | No                      |
+| Experimental study with random assignment                      | No             | Yes                     |
+| Experimental study with random assignment and random selection | Yes            | Yes                     |
+| Experimental study without random assignment                   | No             | No                      |
+
+---
+
+
+#### Exercise 2.1
+
+Researchers studied 1700 children and found that children who averaged more than 2 hours of television per day scored lower on reading test.  
+
+a). Is this an observational of experimental study?  
+
+b). Is it reasonable to conclude that watching two or more hours of television caused the lower reading scores?  
+
+
+#### Exercise 2.9
+
+Researchers compared babies born to mothers with diabetes to babies born to mothers without diabetes (Taddio et al., 2002).  Babies with diabetic mothers had their heels pricked several times a day.  Researchers then noted babies born to diabetic mothers were more likely to grimace or cry when having blood drawn than babies born to mothers without diabetes.  Comment on this conclusion.  
+
+* Observational study so there is no cause-and-effect conclusion that can be made. 
+* Probably there are confounding factors the investigators are unaware of or did not take into account.  
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+# Sampling 
+
+**Goal** of many studies are to generalize from a sample to the population.
+It is **imperative** that the sample is representative of the population.  
+To be sure, **carefully select the sample**.
+**Never** sample out of convenience, because results will be useless.  
+
+
+> **Example**: Why not use this class as a sample of UNE students?
+
+
+Sampling is necessary because of:
+
+1. limited resources
+2. avoid complete destruction (measuring sugar in oranges)
+
+
+
+
+
+
+
+## Sampling Bias
+
+Sample differs from population in a systematic way.  
+
+#### Selection Bias
+
+> Systematic exclusion some part of the population.  This is often done by self-selection or convienence sample.  
+
+
+#### Response bias
+> Systematic difference in response
+
+- improperly calibrated scale
+- improperly worded questions
+- questions about illegal activity 
+
+**Example**: In a study on obesity, people were approached when entering a fast-food establishment and asked how many calories they planned to eat.  Then were asked for their receipt after their purchase.  The initial contact could have (probably) influenced what they ordered. Note: Obamacare's Menu Labeling Law was an attempt to influence consumer's choice.  [Obama Care](https://obamacarefacts.com/2018/05/07/aca-calorie-count-rules-to-go-into-effect/)
+
+
+
+
+
+
+#### Nonresponse bias
+
+> Not all selected individual respond
+
+
+
+
+---
+
+
+## Random Sampling
+
+> A **simple random sample of size $n$** is a sample in which every set of size $n$ has equal chances of being selected. **Note**: if every individual has equal chances does not necessarily mean it is a simple random sample.  
+
+
+The **goal** of random sampling is to produce a sample that is **likely** to be representative of the population.  Although random sampling does not *guarantee* that the sample will be representative, it allow us to **assess the risk** of an unrepresentative sample.  The ability to **quantify the risk** enables us to generalize with confidence.  
+
+
+
+
+#### Random Sample in R without replacement
+
+> Once an individual is selected, they are removed from inclusion in other selections.
+
+Use `sample(x, size)` to sample without replacement.  For example to select 20 unique integers out of 427 we have the following code.
+
+```{r}
+# Sample size 20 from integers 1, 2, 3, ..., 427 without replacement
+sample(1:427, 20)
+```
+
+#### Random Sample in R with replacement
+
+> After an individual is selected, they are placed back into the population for inclusion in next selections.  For example, random sample of {1,2,3,4,5,6} with replacement may look like: 3, 1, 6, 1, 5
+
+
+To sample with replacement, add the `replace = T` parameter.  In the following code, we simulate rolling a six-sided dice 4 times.
+
+```{r}
+# Sample with replacement
+sample(1:6,4,replace = T)
+```
+
+
+
+---
+
+
+### Sampling Size
+
+Sample size does **not** have to be large to be accurate.  Critics often wonder how such a small sample can reflect the opinions of voters.  These critics do not understand the **power of random selection**.  
+
+
+##### Example
+
+Consider average math SAT scores for the schools in NYC.
+
+```{r}
+sat = read.csv('https://raw.githubusercontent.com/danieldiamond/SAT-Scores/master/scores.csv')
+```
+Extract only the math scores.
+```{r}
+mathscore = sat$Average.Score..SAT.Math.
+```
+
+Remove the NA values from the list.  
+```{r}
+# remove NA values from list
+mathscore = mathscore[!is.na(mathscore)]
+```
+
+There are 375 scores.  
+```{r}
+length(mathscore)
+```
+
+Take various sample sizes and find the mean.  
+```{r}
+mean(mathscore[sample(1:length(mathscore), 200)])
+```
+Amazing!!!!
+
+---
+
+
+### Stratified Random Sample
+
+The population is divided into a non-overlapping subgroups (called **strata**),
+then random samples taken from each strata.  Individual subgroups are called stratum (singular of strata).  
+
+
+**Stratified sampling** is easier to implement and more cost-effective than 
+simple random sampling.  Separate simple random samples are independently selected from each
+subgroup.  
+
+
+**Example**: To determine premiums for malpractice insurance, it may be better 
+to partition all doctors into (1) surgeons, (2) internists, (3) obstetricians,
+and (4) all others.  
+
+
+---
+
+### Cluster Sampling
+
+Divides the population of interest into nonoverlapping subgroups (called **clusters**).
+Clusters are then selected at random, and *all* individuals within that cluster are included
+in the sample.  
+
+**Example**: At a large urban high school with 600 seniors in 24 homeroom (with 25 students each).
+Now, randomly select $N$ clusters.
+
+> **NOTE**: It is easy to confuse stratied sampling with cluster sampling.
+Strata are **homogeneous** groups whereas clusters are **heterogeneous** groups.  
+Additionally, *all* members of a cluster are included.  
+
+
+---
+
+### Systematic sampling
+
+A procedure in which $k$ is selected, then one sample within the first $k$ are
+sampled at random.  Subsequently, every $k$th entry in the list is included in the sample. 
+This is known as a **1 in $k$ systematic sample**.  
+
+> As long as there are no repeating patterns in the population, systematic sampling
+works reasonably well.  
+
+**Example** If the technique were to randomly select a day of the week, and $k =  7$, 
+then every subsequent selection would be the same day of the week, thus producing 
+a bias (not representative).
+
+---
+
+### Convenience Sampling
+
+**Never do this**.  
+
+
+
+---
+
+
+
+
+
+#### References
+
+Friedmann, E., Thomas, S. A., Stein, P. K., & Kleiger, R. E. (2003). Relation between pet ownership and heart rate variability in patients with healed myocardial infarcts. *American Journal of Cardiology*, 91(6), 718-721.
+
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The exploration & analysis of data*. Cengage Learning.
+
+
+Taddio, A., Shah, V., Gilbert-MacLeod, C., & Katz, J. (2002). Conditioning and hyperalgesia in newborns exposed to repeated heel lances. *Journal of the American Medical Association*, 288(7), 857-861.
