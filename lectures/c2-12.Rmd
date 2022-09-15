@@ -17,13 +17,12 @@ knitr::opts_chunk$set(echo = TRUE)
 Both can be used to compare groups, but in the experimental design, the researcher controls the variable(s). 
 
 
-
 #### Consider
 Hitting a child and their IQ.  Is there a relationship?  A cause-and-effect?
 In other words, does spanking a child lower their IQ?  At least one study says YES.
 What do you think?  Doesn't matter what you think, what does the data say?  More importantly, **how was the data collected and the study designed**?  
 
-
+<!----------------------------------------------------------------------------->
 ## Observational vs. Experimental Studies
 
 > **Definition**: A study is an **observational study** if the investigator observes characteristics of a sample selected from one or more existing populations.  The <u>goal</u> is usually to draw conclusions about the corresponding population or about the differences between two or more populations.  It is important to sample in such a way to represent the population understudy.
@@ -61,11 +60,11 @@ Friedmann et al. (2003) reported higher variability in heart rate (a good thing)
 
 
 
-
+<!----------------------------------------------------------------------------->
 > **Definition**: An **experimental study** is one in which the researcher observes how a response variable behaves when one (or more) expanatory variables, also called factors, are manipulated.  The <u>goal</u> is to determine the effect of the explanatory variable on the response variable (i.e., *cause-and-effect*).  
 
 
-
+<!----------------------------------------------------------------------------->
 ##### Consider (above): Spanking kids and IQ
 
 The researchers did not control who spanked their kids, nor did they randomly assign kids to a spanking group and non-spanking group; therefore it is an **observational** study.  Furthermore, drawing a *cause-and-effect* conclusion is not appropriate in this case because of the observational nature of the study.  Any claims to do so are wrong!  NOTE: this is one of the most common fallacies.
@@ -73,7 +72,7 @@ The researchers did not control who spanked their kids, nor did they randomly as
 What could be some confounding variables in the case of spanking?  Home environment? Parent's education level?
 
 
-
+<!----------------------------------------------------------------------------->
 ## Drawing Conclusions from Studies
 
 
