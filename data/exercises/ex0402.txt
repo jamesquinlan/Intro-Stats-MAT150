@@ -1,0 +1,9 @@
+'Energy Drink'	'Caffeine Concentration (mg/oz)'
+'Red Bull'	9.6
+'Monster'	10
+'Rockstar'	10
+'Full Throttle'	9
+'No Fear'	10.9
+'Amp'	8.9
+'SoBe Adrenaline Rush'	9.5
+'Tab Energy'	9.1

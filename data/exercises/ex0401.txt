@@ -1,0 +1,8 @@
+'Model'	'Repair Cost'
+'Smart Fortwo'	1480
+'Chevrolet Aveo'	1071
+'Mini Cooper'	2291
+'Toyota Yaris'	1688
+'Honda Fit'	1124
+'Hyundai Accent'	3476
+'Kia Rio'	3701

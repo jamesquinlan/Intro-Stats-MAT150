@@ -1,0 +1,13 @@
+'Coffee Brand'	'concentration (mg/cup)'
+'Eight O’Clock'	140
+'Caribou'	195
+'Kickapoo'	155
+'Starbucks'	115
+'Bucks Country Coffee Co.'	195
+'Archer Farms'	180
+'Gloria Jean’s Coffees'	110
+'Chock Full o’Nuts'	110
+'Peet’s Coffee'	130
+'Maxwell House'	55
+'Folgers'	60
+'Millstone'	60

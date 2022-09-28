@@ -1,0 +1,41 @@
+'Occupation'	'Accidents (1000's)'
+'Student'	152
+'Physician'	109
+'Lawyer'	106
+'Architect'	105
+'Real estate broker'	102
+'Enlisted military'	99
+'Military of fi cer'	91
+'Nurse'	90
+'School administrator'	90
+'Skilled laborer'	90
+'Librarian'	90
+'Creative arts'	90
+'Executive'	89
+'Insurance agent'	89
+'Banking, fi nance'	89
+'Customer service'	88
+'Manager'	88
+'Medical support'	87
+'Computer-related'	87
+'Dentist'	86
+'Social worker'	98
+'Manual laborer'	96
+'Analyst'	95
+'Engineer'	94
+'Consultant'	94
+'Sales'	93
+'Pharmacist'	85
+'Proprietor'	84
+'Teacher, professor'	84
+'Accountant'	84
+'Law enforcement'	79
+'Physical therapist'	78
+'Veterinarian'	78
+'Clerical, secretary'	77
+'Clergy'	76
+'Homemaker'	76
+'Politician'	76
+'Pilot'	75
+'Firefighter'	67
+'Farmer'	43

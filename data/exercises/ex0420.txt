@@ -1,0 +1,12 @@
+'Top-Selling Energy Drinks'	'High-Caffeine Energy Drinks'
+9.6	21
+10	25
+10	15
+9	21.5
+10.9	35.7
+8.9	15
+9.5	33.3
+9.1	11.9
+	16.3
+	31.3
+	30
