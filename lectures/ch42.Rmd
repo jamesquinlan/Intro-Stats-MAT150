@@ -1,0 +1,256 @@
+---
+title: 'Describing Variability in Data'
+author: "MAT150 - Stats for Life Sciences"
+date: '2022-09-29'
+output: html_document
+---
+
+<style>
+    #header1 {
+        color: #336699;
+    }
+    #normal {color: black;}
+    p{font-size:15px;}
+    h1{font-weight: bold;}
+    h2{color: #336699;}
+    h3{color: #666666;}
+    ul{font-size:14px;}
+    ol{font-size:15px;}
+</style>
+
+
+ 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R Commands covered in this lesson {#header1}
+
+`mean`,`sum`,`load`,`round`,`var`,`sd`,`quantile`, `stripchart` and `summary`.
+
+### Measures of Spread
+Measures of center only give partial information about a data set.  How much
+observations differ is also important.  
+Consider the following:
+
+```{r}
+x1 = c(20,40,50,30,60,70)
+x2 = c(47,43,44,46,20,70)
+x3 = c(44,43,40,50,47,46)
+
+# Combine into single data frame
+df = data.frame(x1,x2,x3)
+```
+
+We see the means are all 45:
+```{r}
+mean(x1)
+mean(x2)
+mean(x3)
+```
+We see that x1 and x2 contain numbers ranging from 20 to 70, but x3 are all within
+43 to 50; much smaller range.  But that doesn't tell the whole story.  Let's visualize the data with dot plots.  
+
+```{r}
+# https://www.datamentor.io/r-programming/strip-chart/
+stripchart(df,
+           main="Compare Data",
+           xlab="Sets",
+           ylab="Values",
+           col="brown3",
+           group.names=c("x1","x2","x3"),
+           vertical=TRUE,
+           pch=16)
+```
+
+
+## Range
+
+Range is one measure of variability, large range is associated with high variability.
+However, it neither tells the entire story. Both x1 and x2 have same range (see dotplot). 
+
+> DEFINITION: The **range** of a data set is the difference between the largest 
+and smallest observation (max - min).
+
+
+
+
+## Deviations from the Mean
+
+The most commonly used measure of variability is deviations from the mean.  Subtracting
+the mean from each observation gives a set of "deviations from the mean".
+
+> DEFINITION: The set of **deviations** from the sample mean are:
+\[
+\left\{ (x_1 - \bar{x}), (x_2 - \bar{x}), \dots, (x_n - \bar{x})    \right\}
+\]
+
+#### Example
+
+Here are the deviations from the mean (45) of the data x2.  Note some are positive and some negative.  
+```{r}
+deviations = x1 - mean(x2)
+```
+
+##### Sum of Deviations
+
+Note the sum of these deviations:
+```{r}
+sum(deviations)
+```
+
+This is **always** true, that is
+\[
+\sum_{i}^n (x_i - \bar{x}) = 0 .
+\]
+
+But that does not help in quantifying the variability.
+
+
+
+
+
+#### Example
+
+Consider the variability in the price of the Big Mac in 7 countries in South America.  Is there large 
+variability in the price around the world?
+
+```{r}
+# Load the data
+load(file="bigmac.rda")
+```
+
+Calculate the mean and deviations.
+```{r}
+avgPrice = round(mean(bigmac$Big.Mac.Price),2)
+devPrice = round(bigmac$Big.Mac.Price - mean(bigmac$Big.Mac.Price),2)
+data.frame(Country = bigmac$Country, Price = devPrice)
+```
+
+Note the sum of the (unrounded) deviations.
+
+```{r}
+sum(bigmac$Big.Mac.Price - mean(bigmac$Big.Mac.Price))
+```
+
+
+1. Which country is the highest priced?
+2. How much more than average?
+3. Which country is underpriced?
+
+---
+
+
+<!-- 
+Web Resources:
+https://statsandr.com/blog/
+https://statsandr.com/blog/descriptive-statistics-by-hand/#a-note-on-deciles-and-percentiles 
+https://statsandr.com/blog/outliers-detection-in-r/
+-->
+
+
+## Variance and Standard Deviation
+
+To prevent positive and negative values from canceling, squaring is customary.
+This is the **sum of square deviations** formula.
+
+\[
+S_{xx} = \sum_{i}^n (x_i - \bar{x})^2 = (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \dots + (x_n - \bar{x})^2
+\]
+
+> DEFINITION: The **sample variance** is denoted by $s^2$ and is the sum of the squared deviations from the mean divided by $n-1$ (to be explained later).  This is a kind of "average square deviation".
+Large values of $s^2$ (or $s$) indicate high variability.  
+\[
+s^2 = \frac{S_{xx}}{n-1}.
+\]
+
+> DEFINITION: The sample **standard deviation** is the square root of the sample variance, or $s$.  
+
+We can compute the sample variance and sample standard deviation in R using the commands `var` and `sd`.  
+In the case of the Big Mac, 
+```{r}
+# Variance
+var(bigmac$Big.Mac.Price)
+```
+
+The standard devivation
+```{r}
+# Standard Deviation
+sd(bigmac$Big.Mac.Price)
+```
+
+---
+
+### Median absolute deviation
+\[
+\text{MAD} = median(|x_i - \bar{x}|)
+\]
+
+R function: `mad()`
+
+
+---
+
+
+
+### Interquartile Range (IQR)
+
+The IQR is insensitive to **outliers** and provides yet another measure of variability.
+
+The **lower quartile** separates the bottom 25% and the **upper quartile** the upper 25%. 
+The **middle quartile** is the median, separating the upper and lower halves.  
+
+We can calculate the quartiles using the **quantile** function. We will use the Big Mac data to calculate
+the 25-50-75%.  
+
+```{r}
+quartiles = quantile(bigmac$Big.Mac.Price, probs = c(0.25, 0.5, 0.75))
+IQR = quartiles[3] - quartiles[1]
+IQR[[1]]
+```
+
+---
+
+
+
+#### Percentiles
+This method of outliers detection is based on the percentiles. With the percentiles method, all observations that lie outside the interval formed by the 2.5 and 97.5 percentiles will be considered as potential outliers. Other percentiles such as the 1 and 99, or the 5 and 95 percentiles can also be considered to construct the interval.
+```{r}
+# 97.5 Percentile
+# quantile(df$var, 0.975) 
+```
+
+
+#### Example
+
+The Chronicle of Higher Education published data on the percentage of the population
+with bachelor's degree (or higher) in 2007 for each of the 50 U.S. states and 
+District of Columbia (D.C.).  
+```{r}
+load(file="ex4_9.rda")
+degrees # variable saved
+```
+
+
+
+Lets get a summary.
+```{r}
+summary(degrees)
+```
+
+
+
+
+
+### Summary
+
+When describing data, the center and the spread are two key features.   
+There are many quantities to describe how spread the data is including the range, the variance, the standard deviation, and the interquartile range.  
+
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.

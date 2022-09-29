@@ -1,0 +1,192 @@
+---
+title: "Numerical Methods for Describing Data"
+author: "MAT150 - Stats. for Life Sciences"
+class: "James Quinlan"
+date: '2022-09-29'
+section: "4.1"
+output: html_document
+---
+
+
+<style>
+    #header1 {
+        color: #336699;
+    }
+    #normal {color: black;}
+    p{font-size:15px;}
+    h1{font-weight: bold;}
+    h2{color: #336699;}
+    h3{color: #666666;}
+    ul{font-size:14px;}
+    ol{font-size:15px;}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R Commands covered in this lesson {#header1}
+
+`mean`,`median`, `sum`,`length`, and `ifelse`.
+
+## Measures of Center
+
+The two most widely used _measures of center_ are the **mean** and the **median**.
+
+> **DEFINTION**:   The **sample mean** is defined by
+\[
+\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n}
+\]
+
+#### Example: 
+In 2006, Medicare introduced a new prescription drug program.  Below is the data
+for the percentage of signups for those eligible for low-income subsidies per 
+state.  
+```{r}
+# Signups percentage per state
+x = c(24,27,12,38,21,26,23,33,19,19,
+      26,28,16,21,28,20,21,41,22,16,
+      29,26,22,16,27,22,19,22,22,22,
+      30,20,21,34,26,20,25,19,17,21,
+      27,19,27,34,20,30,20,21,14,18)
+```
+The mean percent of signups for those eligible for low-income subsidies per 
+state is calculated as:
+
+```{r}
+# Mean
+mean(x)
+sum(x)/length(x)
+```
+
+
+
+### Trimmed Means
+
+If data contains outliers, we can remove those values and compute the mean.  
+
+> **DEFINITION**: A **trimmed mean** is computed (by hand) by first ordering the data values from smallest to largest, deleting a selected number of values from each 
+end of the ordered list, then averaging the remaning values.  The **trimmed percentage**
+is the percentage of values deleted from each end of the ordered list.  In particular, 
+\[
+\text{trim percentage} = \left( \frac{\text{# deleted from each end}}{n}  \right) \cdot 100
+\]
+Therefore, 
+\[
+\text{# deleted from each end} = \left( \frac{\text{trim percentage}}{100}  \right) \cdot n
+\]
+
+#### In R
+
+```{r}
+# Trim 10%
+mean(x, trim = 0.10)
+```
+
+
+
+
+> **DEFINTION**:   The **median** is the middle value in an (ordered) list.  It is
+the value in which 1/2 of the observations are below and 1/2 of the observation 
+are above.  If there are an odd number of data, take the middle value, else take
+the average of the two middle values.  
+
+#### Example
+Given the data: {1,2,3,7,8,9,15}, 
+the median is 7. Note that 3 values are below 7 and 3 values are above 7.
+In R we have, 
+```{r}
+median(c(1,2,3,7,8,9,15))
+```
+
+#### Example
+Given, {1,2,3,7,9,15}, the median is (3+7) / 2 = 10/2 = 5.  Let's check with R.  
+```{r}
+median(c(1,2,3,7,9,15))
+```
+ 
+#### Example:
+In the medicare prescription example above, we calculate the median to be 22.  That is half the states had less than 22% enroll (or about 1 out of 5 eligible enrolled. Why?).
+
+```{r}
+# Median
+median(x)
+```
+
+
+
+
+```{r stchart, echo=FALSE}
+# stripchart(x, method = "stack", pch = 16 )
+# Plot characteristic, 0 square, 1 open circle, 16 solid circle (dot plot)  
+```
+
+
+### Categorical Data
+
+Numerical summary of categorical data is **relative frequency** (proportion or fraction)
+for each category.  Often it is *dichotomous* (Success or Failure, Heads or Tails, etc.)
+
+> **DEFINITION**: The **sample proportion of successes**, 
+\[
+\hat{p} =   \text{sample proportion of successes} = \frac{\text{# successes}}{n}
+\]
+
+#### Example (4.14)
+
+Suppose 10 patients with meningitis received treatment with large dose of penicillin.
+Observations for whether the treatment was successful was recorded.  What is the
+value of the sample proportion of success?  
+
+```{r}
+treatment = c("S", "S", "F", "S","S", "S", "F","F","S","S")
+results = table(treatment)
+```
+
+
+
+```{r}
+sum(treatment=="S")/length(treatment)
+```
+
+
+```{r}
+results[2]/length(treatment)
+```
+
+
+Convert values to 1 and 0 instead of "S" and "F".
+```{r}
+Treatment = ifelse(treatment == "S",1,0)
+```
+
+Take average $\bar{x}$ and compare with $\hat{p}$.
+
+```{r}
+mean(Treatment)
+```
+
+How many successes out of 15 additional patients would be required to reach 80%?
+```{r}
+# Solve equation
+moreS = 25*(0.8) - 7
+moreS
+```
+
+
+
+
+
+
+---
+
+### Summary
+Measures of center are an essential statistic and most frequently report.  The mean (or arithmetic average) is most common, but other measures of center are the trimmed mean and the median.  
+We also examined the numerical summary of categorical data (i.e., relative frequency or proportion(s)).  
+ 
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.
