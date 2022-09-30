@@ -1,0 +1,41 @@
+'Occupation'	'Accidents per 1000'
+'Student'	152
+'Banking-finance'	89
+'Physician'	109
+'Customer service'	88
+'Lawyer'	106
+'Manager'	88
+'Architect'	105
+'Medical support'	87
+'Real estate broker'	102
+'Computer-related'	87
+'Enlisted military'	199
+'Dentist'	86
+'Social worker'	198
+'Pharmacist'	85
+'Manual laborer'	196
+'Proprietor'	84
+'Analyst'	195
+'Teacher, professor'	84
+'Engineer'	194
+'Accountant'	84
+'Consultant'	194
+'Law enforcement'	79
+'Sales'	193
+'Physical therapist'	78
+'Military officer'	191
+'Veterinarian'	78
+'Nurse'	190
+'Clerical, secretary'	77
+'School administrator'	190
+'Clergy'	76
+'Skilled labor'	190
+'Homemaker'	76
+'Librarian'	190
+'Politician'	76
+'Creative arts'	190
+'Pilot'	75
+'Executive'	189
+'Firefighter'	67
+'Insurance agent'	189
+'Farmer'	43

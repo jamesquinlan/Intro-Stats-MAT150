@@ -1,0 +1,5 @@
+'Type of Grape'	'Tons Produced'
+'Red Wine Grapes'	1715000
+'White Wine Grapes'	1346000
+'Raisin Grapes'	494000
+'Table Grapes'	117000

@@ -1,0 +1,7 @@
+'Years of Study'	'Writing Score (avg)'	'Math Score (avg)'
+15	442	461
+16	447	466
+17	454	473
+18	469	490
+19	486	507
+20	534	551

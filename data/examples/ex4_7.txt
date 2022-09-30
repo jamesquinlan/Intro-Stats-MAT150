@@ -1,0 +1,8 @@
+'Country'	'Big Mac Price ($)'
+'Argentina'	3.02
+'Brazil'	4.67
+'Chile'	3.28
+'Colombia'	3.51
+'Costa Rica'	3.42
+'Peru'	2.76
+'Uruguay'	2.87

@@ -1,0 +1,15 @@
+'Player'	'2009 Salary'
+'Brad Miller'	12250000
+'Luol Deng'	10370425
+'Kirk Hinrich'	9500000
+'Jerome James'	6600000
+'Tim Thomas'	6466600
+'John Salmons'	5456000
+'Derrick Rose'	5184480
+'Tyrus Thomas'	4743598
+'Joakim Noah'	2455680
+'Jannero Pargo'	2000000
+'James Johnson'	1594080
+'Lindsey Hunter'	1306455
+'Taj Gibson'	1039800
+'Aaron Gray'	1000497
