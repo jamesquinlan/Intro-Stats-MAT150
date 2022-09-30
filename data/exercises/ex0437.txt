@@ -1,4 +1,4 @@
-'Occupation'	'Accidents (1000's)'
+'Occupation'	'Accidents'
 'Student'	152
 'Physician'	109
 'Lawyer'	106

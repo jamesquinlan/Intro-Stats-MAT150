@@ -1,0 +1,51 @@
+'State'	'Rate'
+'Alabama'	0.08
+'Alaska'	0.1
+'Arizona'	0.09
+'Arkansas'	0.09
+'California'	0.06
+'Colorado'	0.08
+'Connecticut'	0.05
+'Delaware'	0.07
+'Florida'	0.07
+'Georgia'	0.08
+'Hawaii'	0.08
+'Idaho'	0.06
+'Illinois'	0.06
+'Indiana'	0.08
+'Iowa'	0.03
+'Kansas'	0.05
+'Kentucky'	0.07
+'Louisiana'	0.1
+'Maine'	0.06
+'Maryland'	0.06
+'Massachusetts'	0.04
+'Michigan'	0.06
+'Minnesota'	0.03
+'Mississippi'	0.07
+'Missouri'	0.07
+'Montana'	0.09
+'Nebraska'	0.04
+'Nevada'	0.1
+'New Hampshire'	0.03
+'New Jersey'	0.04
+'New Mexico'	0.1
+'New York'	0.05
+'North Carolina'	0.08
+'North Dakota'	0.07
+'Ohio'	0.05
+'Oklahoma'	0.08
+'Oregon'	0.06
+'Pennsylvania'	0.05
+'Rhode Island'	0.06
+'South Carolina'	0.07
+'South Dakota'	0.06
+'Tennessee'	0.07
+'Texas'	0.07
+'Utah'	0.07
+'Vermont'	0.04
+'Virginia'	0.04
+'Washington'	0.07
+'West Virginia'	0.08
+'Wisconsin'	0.04
+'Wyoming'	0.06

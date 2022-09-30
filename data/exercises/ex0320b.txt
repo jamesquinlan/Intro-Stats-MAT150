@@ -1,0 +1,27 @@
+'Large Urban Areas'	'Extra Hours per Year per Traveler'
+'Riverside, CA'	55
+'Orlando, FL'	55
+'San Jose, CA'	53
+'San Diego, CA'	52
+'Denver, CO'	51
+'Baltimore, MD'	50
+'Seattle, WA'	46
+'Tampa, FL'	46
+'Minneapolis, St Paul, MN'	43
+'Sacramento, CA'	40
+'Portland, OR, WA'	39
+'Indianapolis, IN'	38
+'St Louis, MO-IL'	35
+'San Antonio, TX'	33
+'Providence, RI, MA'	33
+'Las Vegas, NV'	30
+'Cincinnati, OH-KY-IN'	30
+'Columbus, OH'	29
+'Virginia Beach, VA'	26
+'Milwaukee, WI'	23
+'New Orleans, LA'	18
+'Kansas City, MO-KS'	17
+'Pittsburgh, PA'	14
+'Buffalo, NY'	13
+'Oklahoma City, OK'	12
+'Cleveland, OH'	10

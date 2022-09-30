@@ -1,0 +1,52 @@
+'State'	'moved %'
+'Alabama'	16.1
+'Alaska'	21.2
+'Arizona'	20.2
+'Arkansas'	18.9
+'California'	15.9
+'Colorado'	19.6
+'Connecticut'	13.1
+'Delaware'	14
+'District of Columbia'	18.8
+'Florida'	17.4
+'Georgia'	18.8
+'Hawaii'	14.5
+'Idaho'	21
+'Illinois'	15
+'Indiana'	16.8
+'Iowa'	17
+'Kansas'	18.7
+'Kentucky'	16.8
+'Louisiana'	18.9
+'Maine'	14.4
+'Maryland'	14.5
+'Massachusetts'	13.6
+'Michigan'	14.2
+'Minnesota'	14.2
+'Mississippi'	17.2
+'Missouri'	17.5
+'Montana'	17.5
+'Nebraska'	18
+'Nevada'	22
+'New Hampshire'	13.7
+'New Jersey'	11.1
+'New Mexico'	16.8
+'New York'	11.5
+'North Carolina'	17.5
+'North Dakota'	17.2
+'Ohio'	15.7
+'Oklahoma'	19.2
+'Oregon'	20.2
+'Pennsylvania'	12.7
+'Rhode Island'	13.4
+'South Carolina'	16.6
+'South Dakota'	16.7
+'Tennessee'	16.6
+'Texas'	19.1
+'Utah'	20.7
+'Vermont'	14.5
+'Virginia'	16.3
+'Washington'	19.5
+'West Virginia'	12.7
+'Wisconsin'	15.3
+'Wyoming'	18.8

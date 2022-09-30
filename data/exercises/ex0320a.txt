@@ -1,0 +1,14 @@
+'Very Large Urban Areas'	'Extra Hours per Year per Traveler'
+'Los Angeles, CA'	93
+'San Francisco, CA'	72
+'Washington DC, VA, MD'	69
+'Atlanta, GA'	67
+'Houston, TX'	63
+'Dallas, Fort Worth, TX'	60
+'Chicago, IL-IN'	58
+'Detroit, MI'	57
+'Miami, FL'	51
+'Boston, MA, NH, RI'	51
+'New York, NY-NJ-CT'	49
+'Phoenix, AZ'	49
+'Philadelphia, PA-NJ-DE-MD'	38

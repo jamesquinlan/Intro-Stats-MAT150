@@ -1,0 +1,14 @@
+'Urban_Area'	'hours'
+'Los Angeles'	98
+'San Francisco'	75
+'Washington DC'	66
+'Atlanta'	64
+'Houston'	65
+'Dallas, Fort Worth'	61
+'Chicago'	55
+'Detroit'	54
+'Miami'	48
+'Boston'	53
+'New York'	50
+'Phoenix'	49
+'Philadelphia'	40

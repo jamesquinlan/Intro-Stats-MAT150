@@ -1,0 +1,52 @@
+'State'	'% Union Workers'
+'Alabama'	9.8
+'Alaska'	23.5
+'Arizona'	8.8
+'Arkansas'	5.9
+'California'	18.4
+'Colorado'	8
+'Connecticut'	16.9
+'Delaware'	12.2
+'District of Columbia'	13.4
+'Florida'	6.4
+'Georgia'	3.7
+'Hawaii'	24.3
+'Idaho'	7.1
+'Illinois'	16.6
+'Indiana'	12.4
+'Iowa'	10.6
+'Kansas'	7
+'Kentucky'	8.6
+'Louisiana'	4.6
+'Maine'	12.3
+'Maryland'	15.7
+'Massachusetts'	12.6
+'Michigan'	18.8
+'Minnesota'	16.1
+'Mississippi'	5.3
+'Missouri'	11.2
+'Montana'	12.2
+'Nebraska'	8.3
+'Nevada'	16.7
+'New Hampshire'	3.5
+'New Jersey'	6.1
+'New Mexico'	10.6
+'New York'	18.3
+'North Carolina'	7.2
+'North Dakota'	24.9
+'Ohio'	14.2
+'Oklahoma'	6.6
+'Oregon'	16.6
+'Pennsylvania'	15.4
+'Rhode Island'	16.5
+'South Carolina'	3.9
+'South Dakota'	5
+'Tennessee'	5.5
+'Texas'	4.5
+'Utah'	5.8
+'Vermont'	4.1
+'Virginia'	10.4
+'Washington'	19.8
+'West Virginia'	13.8
+'Wisconsin'	15
+'Wyoming'	7.7

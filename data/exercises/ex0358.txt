@@ -1,0 +1,8 @@
+'impairments'	'Frequency'
+0	100
+1	43
+2	36
+3	17
+4	24
+5	9
+6	11

@@ -1,0 +1,6 @@
+'Peak Intake (micrograms)'	'Proportion (p)'
+10	0.98
+30	0.9
+50	0.88
+70	0.5
+90	0.17

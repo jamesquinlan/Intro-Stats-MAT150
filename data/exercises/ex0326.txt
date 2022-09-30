@@ -1,0 +1,52 @@
+'State'	'Cost per Month'
+'Alabama'	14.08
+'Alaska'	20.05
+'Arizona'	6.14
+'Arkansas'	10.31
+'California'	5.41
+'Colorado'	8.62
+'Connecticut'	7.32
+'Delaware'	6.44
+'District of Columbia'	6.44
+'Florida'	10.35
+'Georgia'	17.91
+'Hawaii'	17.18
+'Idaho'	6.33
+'Illinois'	13.32
+'Indiana'	12.3
+'Iowa'	1.87
+'Kansas'	9.48
+'Kentucky'	12.3
+'Louisiana'	17.06
+'Maine'	19.6
+'Maryland'	6.44
+'Massachusetts'	7.32
+'Michigan'	13.75
+'Minnesota'	1.87
+'Mississippi'	11.6
+'Missouri'	10.29
+'Montana'	1.87
+'Nebraska'	1.87
+'Nevada'	6.42
+'New Hampshire'	19.6
+'New Jersey'	4.43
+'New Mexico'	10.65
+'New York'	4.1
+'North Carolina'	13.27
+'North Dakota'	1.87
+'Ohio'	14.43
+'Oklahoma'	10.07
+'Oregon'	6.93
+'Pennsylvania'	10.14
+'Rhode Island'	7.32
+'South Carolina'	16.57
+'South Dakota'	1.87
+'Tennessee'	14.08
+'Texas'	10.31
+'Utah'	6.33
+'Vermont'	7.32
+'Virginia'	8.81
+'Washington'	6.93
+'West Virginia'	10.14
+'Wisconsin'	11.42
+'Wyoming'	1.87

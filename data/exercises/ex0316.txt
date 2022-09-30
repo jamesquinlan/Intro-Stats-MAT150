@@ -1,0 +1,52 @@
+'State'	'Number  of People'
+'Alabama'	976
+'Alaska'	129
+'Arizona'	1215
+'Arkansas'	730
+'California'	5508
+'Colorado'	985
+'Connecticut'	678
+'Delaware'	174
+'District of Columbia'	125
+'Florida'	3355
+'Georgia'	1779
+'Hawaii'	217
+'Idaho'	260
+'Illinois'	2754
+'Indiana'	1427
+'Iowa'	647
+'Kansas'	573
+'Kentucky'	1178
+'Louisiana'	1021
+'Maine'	297
+'Maryland'	1039
+'Massachusetts'	1207
+'Michigan'	2336
+'Minnesota'	1122
+'Mississippi'	680
+'Missouri'	1472
+'Montana'	212
+'Nebraska'	367
+'Nevada'	543
+'New Hampshire'	281
+'New Jersey'	1662
+'New Mexico'	363
+'New York'	4052
+'North Carolina'	2010
+'North Dakota'	145
+'Ohio'	2865
+'Oklahoma'	858
+'Oregon'	735
+'Pennsylvania'	2858
+'Rhode Island'	246
+'South Carolina'	907
+'South Dakota'	188
+'Tennessee'	1343
+'Texas'	4428
+'Utah'	304
+'Vermont'	134
+'Virginia'	1487
+'Washington'	1172
+'West Virginia'	452
+'Wisconsin'	1167
+'Wyoming'	111

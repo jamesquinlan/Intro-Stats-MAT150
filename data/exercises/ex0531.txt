@@ -1,0 +1,7 @@
+'Region'	'Pollution'	'Cost $'
+'North'	30	915
+'Upper South'	31.8	891
+'Deep South'	32.1	968
+'West South'	26.8	972
+'Big Sky'	30.4	952
+'West'	40	899

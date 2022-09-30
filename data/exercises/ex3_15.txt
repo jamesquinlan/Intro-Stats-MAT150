@@ -1,0 +1,52 @@
+'State'	'Births per 1,000 of Population'
+'Alabama'	14
+'Alaska'	16.2
+'Arizona'	16.2
+'Arkansas'	14.6
+'California'	15.5
+'Colorado'	14.6
+'Connecticut'	11.9
+'Delaware'	14.1
+'District of Columbia'	15.1
+'Florida'	13.1
+'Georgia'	15.9
+'Hawaii'	14.9
+'Idaho'	16.7
+'Illinois'	14.1
+'Indiana'	14.2
+'Iowa'	13.7
+'Kansas'	15.1
+'Kentucky'	14
+'Louisiana'	15.4
+'Maine'	10.7
+'Maryland'	13.9
+'Massachusetts'	12.1
+'Michigan'	12.4
+'Minnesota'	14.2
+'Mississippi'	15.9
+'Missouri'	13.9
+'Montana'	13
+'Nebraska'	15.2
+'Nevada'	16.1
+'New Hampshire'	10.8
+'New Jersey'	13.4
+'New Mexico'	15.5
+'New York'	13.1
+'North Carolina'	14.5
+'North Dakota'	13.8
+'Ohio'	13.2
+'Oklahoma'	15.2
+'Oregon'	13.2
+'Pennsylvania'	12.1
+'Rhode Island'	11.7
+'South Carolina'	14.3
+'South Dakota'	15.4
+'Tennessee'	14.1
+'Texas'	17.1
+'Utah'	20.8
+'Vermont'	10.5
+'Virginia'	14.1
+'Washington'	13.8
+'West Virginia'	12.1
+'Wisconsin'	13
+'Wyoming'	15.1

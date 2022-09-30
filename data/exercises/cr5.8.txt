@@ -1,0 +1,51 @@
+'State'	'$ Low'	'$ High'
+'Alaska'	20.05	61.93
+'Arizona'	6.14	64.86
+'Arkansas'	10.31	67.98
+'California'	5.41	66.08
+'Colorado'	8.62	65.88
+'Connecticut'	7.32	65.58
+'Delaware'	6.44	68.91
+'District of Columbia'	6.44	68.91
+'Florida'	10.35	104.89
+'Georgia'	17.91	73.17
+'Hawaii'	17.18	64.43
+'Idaho'	6.33	68.88
+'Illinois'	13.32	65.04
+'Indiana'	12.3	70.72
+'Iowa'	1.87	99.9
+'Kansas'	9.48	67.88
+'Kentucky'	12.3	70.72
+'Louisiana'	17.06	70.59
+'Maine'	19.6	65.39
+'Maryland'	6.44	68.91
+'Massachusetts'	7.32	65.58
+'Michigan'	13.75	65.69
+'Minnesota'	1.87	99.9
+'Mississippi'	11.6	70.59
+'Missouri'	10.29	68.26
+'Montana'	1.87	99.9
+'Nebraska'	1.87	99.9
+'Nevada'	6.42	64.63
+'New Hampshire'	19.6	65.39
+'New Jersey'	4.43	66.53
+'New Mexico'	10.65	62.38
+'New York'	4.1	85.02
+'North Carolina'	13.27	65.03
+'North Dakota'	1.87	99.9
+'Ohio'	14.43	68.05
+'Oklahoma'	10.07	70.79
+'Oregon'	6.93	64.99
+'Pennsylvania'	10.14	68.61
+'Rhode Island'	7.32	65.58
+'South Carolina'	16.57	69.72
+'South Dakota'	1.87	99.9
+'Tennessee'	14.08	69.98
+'Texas'	10.31	68.41
+'Utah'	6.33	68.88
+'Vermont'	7.32	65.58
+'Virginia'	8.81	68.61
+'Washington'	6.93	64.99
+'West Virginia'	10.14	68.61
+'Wisconsin'	11.42	63.23
+'Wyoming'	1.87	99.9
