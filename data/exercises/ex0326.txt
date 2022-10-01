@@ -1,4 +1,4 @@
-'State'	'Cost/Month'
+'State'	'Cost_per_Month'
 'Alabama'	14.08
 'Alaska'	20.05
 'Arizona'	6.14
