@@ -1,4 +1,4 @@
-'Energy Drink'	'Caffeine Concentration (mg/oz)'
+'Energy_Drink'	'Caffeine_Concentration_mg_per_oz'
 'Red Bull'	9.6
 'Monster'	10
 'Rockstar'	10
