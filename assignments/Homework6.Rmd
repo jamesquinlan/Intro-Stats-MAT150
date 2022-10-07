@@ -1,0 +1,297 @@
+---
+title: "Numerical Description of Data"
+author: "Chapter 4.1 & 4.2"
+date: "MAT150"
+output: html_document
+---
+
+
+<style>
+p{font-size:15px;}
+h1{font-weight: bold;}
+h2{color: #336699;}
+h3{color: #666666;}
+ul{font-size:14px;}
+ol{font-size:15px;}
+strong{font-size:18px; color : #336699}
+</style>
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+---
+
+
+**4.2**. - The article *Caffeinated Energy Drinks—A Growing Problem* (Drug and Alcohol Dependence [2009]: 1–10) gave the following data on caffeine concentration (mg/ounce) for eight top-selling energy drinks:
+
+```{r, echo=FALSE}
+caffeine = read.table('https://raw.githubusercontent.com/jamesquinlan/Intro-Stats-MAT150/main/data/exercises/ex0402.txt', header = T)
+caffeine
+```
+
+**a**. What is the value of the mean caffeine concentration for this set of top-selling energy drinks? 
+
+```{r}
+mean(caffeine$Caffeine_Concentration_mg_per_oz)
+```
+
+**b**. 
+Coca-Cola has 2.9 mg/ounce of caffeine and Pepsi Cola has 3.2 mg/ounce of caffeine. Write a sentence explaining how the caffeine concentration of top-selling energy drinks compares to that of these colas.
+
+*Answer*: Soda has much less caffeine than energy drinks.  
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+**4.4**. -  Consumer Reports Health reported the sodium content (mg) per 2 tablespoon serving for each of 11 different peanut butters:
+
+```{r}
+sodium = c(120,50,140,120,150,150,150,65,170,250,110)
+sodium
+```
+
+**a**. 
+Display these data using a dotplot. Comment on any unusual features of the plot.
+
+```{r}
+stripchart(sodium, method="stack", pch=20, col = "#336699", frame = FALSE)
+```
+
+**b**. Compute the mean and median sodium content for the peanut butters in this sample.
+
+```{r}
+mean(sodium)
+median(sodium)
+```
+
+**c**. The values of the mean and the median for this data set are similar. What aspect of the distribution of sodium content—as pictured in the dotplot from Part (a)—provides an explanation for why the values of the mean and median are similar?
+
+*Answer*: Distribution is somewhat symmetricial.  
+
+
+
+
+
+
+
+---
+
+
+
+**4.10**. - The ministry of Health and Long-Term Care in Ontario, Canada, publishes information on its web site (www.health.gov.on.ca) on the time that patients must wait for various medical procedures. For two cardiac procedures completed in fall of 2005, the following information was provided:
+
+```{r}
+data.frame(Procedure = c("Angioplasty", "Bypass"), 
+           Complications = c(847,539), 
+           Median_Wait = c(14,13), 
+           Mean_Wait = c(18,19), 
+           MostCompleteDays = c(39,42)
+           )
+```
+
+**a**. 
+The median wait time for angioplasty is greater than the median wait time for bypass surgery but the mean wait time is shorter for angioplasty than for bypass surgery. What does this suggest about the distribution of wait times for these two procedures? 
+
+*Answer*: The variation in wait time is different between the two procedures. That is, the distribution looks different, in this case, both have right skew (tail toward the right), but bypass will have "longer" tail.  
+
+**b**. 
+Is it possible that another medical procedure might have a median wait time that is greater than the time reported for "90% completed within"? Explain.
+
+*Answer*: Not possible.  Median is 50%, which is less than 90%.  
+
+
+---
+
+
+
+
+
+**4.14**. - Suppose that 10 patients with meningitis received treatment with large doses of penicillin. Three days later, temperatures were recorded, and the treatment was con- sidered successful if there had been a reduction in a pa- tient’s temperature. Denoting success by S and failure by F, the 10 observations are:
+
+```{r, echo=F}
+results = c('S', 'S', 'F', 'S','S','S', 'F', 'F', 'S','S')
+results
+```
+
+
+**a**.  
+What is the value of the sample proportion of successes?
+
+```{r}
+sum(results == "S")/length(results)
+```
+
+**b**. 
+Replace each S with a 1 and each F with a 0.
+
+```{r}
+results = ifelse(results=="S", 1, 0)
+```
+
+Then calculate $\bar{x}$ for this numerically coded sample. 
+
+```{r}
+mean(results)
+```
+
+How does x compare to $\hat{p}$?  
+
+*Answer*: Same.
+
+
+
+**c**. 
+Suppose that it is decided to include 15 more patients in the study. How many of these would have to be S’s to give $\hat{p} =  0.80$ for the entire sample of 25 patients?
+
+
+
+
+
+---
+
+
+
+
+**4.19**. - Combining the cost-per-serving data for high-fiber cereals rated very good and those rated good from the previous exercise gives the following data set:
+
+```{r}
+cost_per_fiber = c(46,49,62,41,19,77,71,30,53,53,67,43,48,28,54)
+x = c(19,28,30,41,43,46,48,49,53,53,54,62,67,71,77)
+```
+
+
+**a**. Compute the quartiles and the interquartile range for this combined data set.
+
+```{r}
+quantile(cost_per_fiber, type=1)  
+IQR(cost_per_fiber, type = 1)
+```
+
+
+**b**. Compute the interquartile range for just the cereals rated good. 
+
+```{r}
+good = cost_per_fiber[1:6]
+IQR(good, type=8)
+```
+
+Is this value greater than, less than, or about equal to the interquartile range computed in Part (a)?
+
+*Answer*: Slightly greater than whole list.
+
+
+
+
+
+
+---
+
+
+**4.20**. - The paper "Caffeinated Energy Drinks—A Growing Problem" (Drug and Alcohol Dependence [2009]: 1–10) gave the accompanying data on caffeine per ounce for eight top-selling energy drinks and for 11 high-caffeine energy drinks:
+
+```{r}
+# Top-Selling Energy Drinks
+top = c(9.6, 10.0, 10.0, 9.0, 10.9, 8.9, 9.5, 9.1) 
+
+# High-Caffeine Energy Drinks
+highcaff = c(21.0, 25.0, 15.0, 21.5, 35.7, 15.0, 33.3, 11.9, 16.3, 31.3, 30.0)
+```
+
+
+The mean caffeine per ounce is clearly higher for the high-caffeine energy drinks, but which of the two groups of energy drinks (top-selling or high-caffeine) is the most variable with respect to caffeine per ounce? Justify your choice.
+
+```{r}
+sd(top)
+sd(highcaff)
+```
+*Answer*: There is greater variation among the high-caffeine drinks.  
+
+We could have also compared the interquartile ranges and observed same result. 
+
+```{r}
+IQR(top)
+IQR(highcaff)
+```
+
+---
+
+
+
+
+
+**4.28**. - The Ministry of Health and Long-Term Care in Ontario, Canada, publishes information on the time that patients must wait for various medical procedures on its web site (www.health.gov.on.ca). For two car- diac procedures completed in fall of 2005, the following information was provided:
+
+```{r}
+data.frame(Procedure = c("Angioplasty", "Bypass"), 
+           Complications = c(847,539), 
+           Median_Wait = c(14,13), 
+           Mean_Wait = c(18,19), 
+           MostCompleteDays = c(39,42)
+           )
+```
+
+
+**a**. Which of the following must be true for the lower quartile of the data set consisting of the 847 wait times for angioplasty?
+
+
+i. The lower quartile is less than 14. **TRUE**
+
+ii. The lower quartile is between 14 and 18. **FALSE**
+
+iii. The lower quartile is between 14 and 39. **FALSE**
+
+iv. The lower quartile is greater than 39.  **FALSE**
+
+
+**b**. 
+Which of the following must be true for the upper quartile of the data set consisting of the 539 wait times for bypass surgery?
+
+
+i. The upper quartile is less than 13.  **FALSE**
+
+
+ii. The upper quartile is between 13 and 19.  **FALSE**
+
+
+iii. The upper quartile is between 13 and 42. **TRUE**
+
+
+iv. The upper quartile is greater than 42.  **FALSE**
+
+
+**c**. Which of the following must be true for the number of days for which only 5% of the bypass surgery wait times would be longer?
+
+i. It is less than 13.  **FALSE**
+
+ii. It is between 13 and 19.  **FALSE**
+
+iii. It is between 13 and 42. **FALSE**
+
+iv. It is greater than 42.  **TRUE** - has to be above 42 since 10% are above 42, 5% will be greater 42.  
+
+
+
+
+
+
+---
+
+

@@ -1,0 +1,367 @@
+---
+title: "Describing Data Graphically"
+author: "Homework 5"
+date: 'MAT150'
+output: html_document
+---
+
+
+<style>
+p{font-size:15px;}
+h1{font-weight: bold;}
+h2{color: #336699;}
+h3{color: #666666;}
+ul{font-size:14px;}
+ol{font-size:15px;}
+strong{font-size:18px; color : #336699}
+</style>
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**3.13** - In a discussion of accidental deaths involving roadside hazards, the web site highwaysafety.com included a pie chart like the one shown:  
+
+```{r, echo=FALSE}
+hazards = c("Embankment", "Guardrail","Utility pole", "Ditch", 
+            "Curb", "Sign/post", "Tree", "Bridge rail", "Concrete bar",
+            "Fence", "Culvert","Other ")
+vals = c(0.11, 0.9, 0.9, 0.8, 0.6, 0.6, 0.28, 0.1, 0.2, 0.4, 0.5, 0.11)
+pie(vals,labels = hazards, col = rainbow(length(hazards)))
+
+```
+
+* Do you think this is an effective use of a pie chart? Why or why not?
+
+  - *Answer*: There are too many categories to display well.  Notice that the names  of the categories overlap making it difficult to read.  
+
+
+
+* Construct a bar chart to show the distribution of deaths by object struck. 
+
+
+```{r ,echo = FALSE}
+hazards = c("Embankment", "Guardrail","Utility pole", "Ditch", 
+            "Curb", "Sign/post", "Tree", "Bridge rail", "Concrete bar",
+            "Fence", "Culvert","Other ")
+vals = c(0.11, 0.9, 0.9, 0.8, 0.6, 0.6, 0.28, 0.1, 0.2, 0.4, 0.5, 0.11)
+barplot(vals,names.arg=hazards,las=2, cex.names = 0.75 ,ylim = c(0,1), 
+        main = "Accidental Deaths involving Roadside Hazards")
+
+```
+
+
+* Is this display more effective than the pie chart in summarizing this data set? Explain.
+
+    - *Answer*: Yes, this barchart is much more effective to view frequencies and compare
+categories.  
+
+
+---
+
+
+
+
+
+
+**3.26** - Medicare's new medical plans offer a wide range of variations and choices for seniors when picking a drug plan (San Luis Obispo Tribune, November 25, 2005). The monthly cost for a stand-alone drug plan varies from plan to plan and from state to state. The accompanying table gives the premium for the plan with the lowest cost for each state.
+
+```{r, echo=FALSE}
+cost_by_state = read.table('https://raw.githubusercontent.com/jamesquinlan/Intro-Stats-MAT150/main/data/exercises/ex0326.txt', header = T)
+cost_by_state
+```
+**a**. Use class intervals of \$0 to \$3, \$3 to \$6, \$6 to \$9, etc., to create a relative frequency distribution for these data.
+```{r}
+costs = c(0,3,6,9,12,15,18,21)
+```
+
+
+
+**b**. Construct a histogram and comment on its shape.
+
+```{r}
+H = hist(cost_by_state$Cost_per_Month, breaks = c(0,3,6,9,12,15,18,21),  xaxt='n', main ="Monthly Cost/Month", xlab = "Cost/Month")
+axis(1,  at = costs, labels = costs)
+```
+
+The distribution is skew right and perhaps bimodal with a hump at 0-3 and 6-9.
+
+
+
+**c**. Using the relative frequency distribution or the histogram, estimate the proportion of the states that have a minimum monthly plan of less than $13.00 a month.
+
+```{r}
+sum(H$density[1:5])
+sum(cost_by_state$Cost_per_Month < 13)/50
+```
+
+```{r}
+library(lattice)
+```
+
+```{r}
+histogram(cost_by_state$Cost_per_Month, breaks = c(0,3,6,9,12,15,18,21),  xaxt='n', main ="Monthly Cost/Month", xlab = "Cost/Month", col = "#336699", equal.widths = T)
+```
+
+---
+
+
+
+
+**3.34** -  The authors of the paper "Myeloma in Patients Younger than Age 50 Years Presents with More Favorable Features and Shows Better Survival" (Ludwig et al.,2008; p. 4039–4047) studied patients who had been diagnosed with stage 2 multiple myeloma prior to the age of 50. 
+For each patient who received high dose chemotherapy, the number of years that the patient lived after the therapy (survival time) was recorded. 
+The years survived and the cumulative relative frequencies are given by `x` and `y` below.
+
+
+
+```{r}
+x = c(0,2,4,6,8,10,12,14,16)                            # Years Survived
+y = c(0, 0.1, 0.52, 0.54, 0.64, 0.68, 0.70, 0.72, 1.00) # Cumulative Rel. Freq. 
+```
+
+**a**.  Use the given information to construct a cumulative relative frequency plot.
+
+```{r}
+plot(x, y, 
+     type ="b", 
+     pch  = 20, 
+     col  = "#336699", 
+     xlab = "Years Survived", 
+     ylab = "Cumulative Relative Frequency", 
+     main = "Years Survived after Treatment",
+     xaxt = 'n',)
+axis(1,c(0,2,4,6,8,10,12,14,16), labels = c(0,2,4,6,8,10,12,14,16))
+```
+
+
+**b**. Use the cumulative relative frequency plot from Part (a) to answer the following questions:
+
+i. What is the approximate proportion of patients who lived fewer than 5 years after treatment?
+
+*Answer*: **53%** (See calculation below).
+
+```{r}
+(y[3] + y[4])/2
+```
+
+ii. What is the approximate proportion of patients
+who lived fewer than 7.5 years after treatment?
+
+```{r}
+((y[4]+y[5])/2 + y[5])/2
+```
+
+iii. What is the approximate proportion of patients
+who lived more than 10 years after treatment?
+
+```{r}
+1 - y[6]
+```
+
+
+---
+
+
+
+**3.35**
+
+
+
+---
+
+
+
+
+
+**3.36** - Construct a histogram corresponding to each of the five frequency distributions, I–V, given in the following table, and state whether each histogram is symmetric, bimodal, positively skewed, or negatively skewed:
+
+```{r, echo=FALSE} 
+df = data.frame(
+  Interval = c(0,10,20,30,40,50,60), 
+  I        = c(5,10,20,30,20,10,5), 
+  II       = c(40,25,10,8,7,5,5), 
+  III      = c(30,10,8,7,7,8,30),
+  IV       = c(15,25,8,7,20,25,10), 
+  V        = c(6,5,6,9,9,23,42)
+)
+df
+```
+
+
+
+```{r}
+par(mar = c(3, 1, 1, 1))
+par(mfrow = c(5, 1))
+hist(rep(df$Interval,df$I),   main = "I")
+hist(rep(df$Interval,df$II),  main = "II",  col = 2)
+hist(rep(df$Interval,df$III), main = "III", col = 3)
+hist(rep(df$Interval,df$IV),  main = "IV",  col = 4)
+hist(rep(df$Interval,df$V),   main = "V",   col = 5)
+axis(1,  at = c(0,10,20,30,40,50,60), labels = c(0,10,20,30,40,50,60))
+
+par(mfcol = c(1, 1))  # RESET to the original graphics device
+```
+
+
+---
+
+
+
+
+**3.38** - Consumer Reports Health (www.consumer reports.org) gave the accompanying data on saturated fat (in grams), sodium (in mg), and calories for 36 fast-food items.
+
+
+
+```{r}
+fastfood = read.table('https://raw.githubusercontent.com/jamesquinlan/Intro-Stats-MAT150/main/data/exercises/ex0338.txt', header = T)
+```
+
+
+
+**a**. - Construct a scatterplot using $y=$calories and $x=$ fat. Does it look like there is a relationship between fat and calories? Is the relationship what you expected? Explain.
+
+
+```{r}
+x = fastfood$Fat
+y = fastfood$Calories
+plot(x,y, pch=20, col="#336699", xlab = "Fat", ylab = "Calories")
+```
+
+*Answer*: There is a positive relationship between fat and calories, however, since protein, and sugar also contribute to calorie content, the relationship is extremely strong.  
+
+
+
+
+**b**. Construct a scatterplot using $y=$calories and $x=$sodium. Write a few sentences commenting on the difference between the relationship of calories to fat and calories to sodium.
+
+
+```{r}
+x = fastfood$Sodium
+y = fastfood$Calories
+plot(x,y, pch=20, col="#336699", xlab = "Sodium", ylab = "Calories")
+abline(lm(y~x))
+```
+
+There is a positive relationship between Sodium and Calories, this suggests more sodium is related to higher calorie foods.  However, again fairly weak since many factors contribute to calories.
+
+
+
+**c**. Construct a scatterplot using $y=$sodium and $x=$fat. Does there appear to be a relationship between fat and sodium?
+
+
+```{r}
+x = fastfood$Fat
+y = fastfood$Sodium
+plot(x,y, pch=20, col="#336699", xlab = "Fat", ylab = "Sodium")
+```
+
+No relationship between fat and sodium. 
+
+
+
+
+**d**. Add a vertical line at $x= 3$ and a horizontal line at $y =  900$ to the scatterplot in Part (c). This divides the scatterplot into four regions, with some of the points in the scatterplot falling into each of the four regions. Which of the four regions corresponds to healthier fast-food choices? Explain.
+
+
+```{r}
+x = fastfood$Fat
+y = fastfood$Sodium
+plot(x,y, pch=20, col="#336699", xlab = "Fat", ylab = "Sodium")
+abline(h = 900)
+abline(v = 3)
+```
+
+
+*Answer*: Healthiest option is low-fat, low-sodium (bottom left corner).  
+
+
+
+---
+
+
+
+
+**3.42** - The article "*Medicine Cabinet is a Big Killer*" (The Salt Lake Tribune, August 1, 2007) looked at the number of prescription-drug-overdose deaths in Utah over the period from 1991 to 2006. Construct a time-series plot for these data and describe the trend over time. 
+Has the number of overdose deaths increased at a fairly steady rate?
+
+```{r}
+deaths = c(32,52,73,61,68,64,85,89,88,109,153,201,237,232,308,307)
+y = ts(deaths,start = c(1991,1),frequency = 1)
+plot(y, 
+     xaxt='n', 
+     col = 2, 
+     ylab = "Overdose Deaths", 
+     xlab = "Year", 
+     main = "Deaths by Overdose")
+axis(1,at=1991:2006,labels=1991:2006)
+```
+
+
+
+*The number of overdose deaths has increased at an increasing rate. The years 2000 - 2006 is of particular interest for its large increase and should be investigated further.    
+
+
+---
+
+ 
+
+
+
+
+
+**3.44** - Some days of the week are more dangerous than others, according to Traffic Safety Facts produced by the National Highway Traffic Safety Administration. The average number of fatalities per day for each day of the week are shown in the data frame.
+
+```{r}
+df = read.table('../data/exercises/ex0344.txt', header = T)
+df
+```
+
+**a**. Construct a time-series plot that shows the average fatalities over time for each day of the week. Be sure to label each line clearly as to which day of the week it represents.
+
+```{r}
+plot(df$Year,df$Mon, 
+     type='l',
+     col = 1, 
+     lty = 1, 
+     ylim = c(95, 200), 
+     xlab = "Year",
+     ylab = "Deaths", 
+     main = "Deaths by Weekday"
+     )
+lines(df$Year, df$Tue, col = 2, lty = 2)
+lines(df$Year, df$Wed, col = 3, lty = 3)
+lines(df$Year, df$Thur, col = 4, lty = 4)
+lines(df$Year, df$Fri, col = 5, lty = 5)
+lines(df$Year, df$Sat, col = 6, lty = 6)
+lines(df$Year, df$Sun, col = 7, lty = 7)
+legend(x = "topright", 
+       legend = c("Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"),
+       col = 1:7, 
+       lty = 1:7)
+```
+
+
+**b**. Write a sentence or two commenting on the difference in average number of fatalities for the days of the week. What is one possible reason for the differences?
+
+*Answer*: Weekends remain the most deadly days to be on the road.  Increased traffic on the weekends is on possible rationale for the higher number of fatalities (law of large numbers).  
+
+
+
+**c**. Write a sentence or two commenting on the change in average number of fatalities over time. What is one possible reason for the change?
+
+*Answer*: Fatalities have overall decreased over time.  The decrease is probably do to seatbelt laws and increased safety of cars (improved engineering).
+
+
+---
+
+
+
+
+### References
+
+Ludwig, Heinz, Brian GM Durie, Vanessa Bolejack, Ingemar Turesson, Robert A. Kyle, Joan Blade, Rafael Fonseca et al. "*Myeloma in patients younger than age 50 years presents with more favorable features and shows better survival: an analysis of 10 549 patients from the International Myeloma Working Group.*" Blood, The Journal of the American Society of Hematology 111, no. 8 (2008): 4039-4047.
+

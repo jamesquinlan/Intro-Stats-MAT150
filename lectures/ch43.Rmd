@@ -1,0 +1,113 @@
+---
+title: 'Summarizing Data: Boxplots'
+author: "MAT150 - Stats for Life Sciences"
+date: '2022-07-11'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### R Commands used in this lesson
+
+`boxplot`, `summary`, `load`
+
+
+### Outlier
+
+> DEFINITION: An **outlier** is an observation that is more than 1.5(IQR).  An **extreme** outlier is more than 3(IQR). 
+
+
+
+### Boxplot
+
+Boxplots provide a visual for the center, spread, outliers, and symmetry or skewness.
+
+
+
+
+```{r}
+load(file="ex4_9.rda")
+```
+
+
+
+
+
+
+
+```{r}
+boxplot(degrees)
+```
+
+ Boxplots are also useful to detect potential outliers.
+
+
+A boxplot helps to visualize a quantitative variable by displaying five common location summary (minimum, median, first and third quartiles and maximum) and any observation that was classified as a suspected outlier using the interquartile range (IQR) criterion. The IQR criterion means that all observations above 
+\[ 
+q_{0.75} + 1.5 \cdot \text{IQR}  \text{ or below }   q_{0.25} - 1.5 \cdot \text{IQR} 
+\]
+where $q_{0.25}$ and $q_{0.75}$ correspond to first and third quartile respectively, and IQR is the difference between the third and first quartile) are considered as potential outliers by R. In other words, all observations outside of the following interval will be considered as potential outliers:
+\[
+I = [q_{0.25} - 1.5 \cdot \text{IQR}, q_{0.75} + 1.5 \cdot \text{IQR} ]
+\]
+
+
+
+```{r}
+degrees
+```
+
+We can also show outliers using `boxplot.stats()$out` function.  
+
+```{r}
+outiers = boxplot.stats(degrees$Bachelor_degrees)$out
+outiers
+# out_ind <- which(degrees %in% c(out))
+# out_ind
+```
+
+
+
+### Example - Who Moves?
+
+The data for percentage of the population that was born in the state and still live there for the 50 U.S. states is given.  
+
+```{r}
+load(file = "ex0433.rda")
+```
+
+
+
+```{r}
+bornStay$born_n_stay
+```
+
+```{r}
+summary(bornStay)
+```
+
+
+```{r}
+boxplot(bornStay)
+```
+
+
+```{r}
+outliers = boxplot.stats(bornStay$born_n_stay)$out
+outliers
+```
+
+
+
+
+### Summary
+
+Boxplots provide a quick visualization of the distributions of the data, the mean, quartiles, and outliers. 
+It is a go-to plot that can be used to check normality, visually determine differences in mean and standard deviations, as well as inspect for outliers.  
+
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.
