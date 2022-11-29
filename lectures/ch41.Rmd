@@ -4,6 +4,7 @@ author: "MAT150 - Stats. for Life Sciences"
 class: "James Quinlan"
 date: '2022-09-29'
 section: "4.1"
+output: rmarkdown::github_document
 output: html_document
 ---
 
