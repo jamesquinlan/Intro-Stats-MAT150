@@ -19,7 +19,7 @@
 # If you get an error in this step, you do not have the data file in the proper
 # location.  In other words, it cannot find the file. 
 
-setwd("C://Users//jquin//Documents//MAT150")
+setwd("C://Users//you//Documents//MAT150")
 data = read.csv('ex154.csv', header = T)   	# <-- EDIT THIS AS NEEDED
 
 # ------------------------------------------------------------------------------
