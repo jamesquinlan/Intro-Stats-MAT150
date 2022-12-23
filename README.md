@@ -68,6 +68,7 @@ Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 11. Comparing two populations
 12. Ananlysis of variance (ANOVA)
 
+---
 
 
 ## Core Curriculum
