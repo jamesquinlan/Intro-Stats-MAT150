@@ -1,0 +1,164 @@
+---
+title: 'Describing Distribution Values in a Population'
+author: "MAT150 - Stats for Life Sciences"
+date: '2022-09-29'
+output: html_document
+---
+
+<style>
+    #header1 {
+        color: #336699;
+    }
+    #normal {color: black;}
+    p{font-size:15px;}
+    h1{font-weight: bold;}
+    h2{color: #336699;}
+    h3{color: #666666;}
+    ul{font-size:14px;}
+    ol{font-size:15px;}
+</style>
+
+
+ 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R Commands covered in this lesson {#header1}
+
+`barplot`,`hist`,`plot`,`dnorm`,`seq`
+
+
+### Introduction
+
+Our overall **goal** is to infer (generalize) from a *sample* to a *population*. 
+A **population** is the entire collection of individuals or objects about which
+information is desired.  For example, considering performance in a university statistics
+class, the population consists of all students at university that take statistics.
+The *variable of interest* might be the time it takes to complete an exam.  
+
+Variables can be **categorical** or **numerical**.  
+
+---
+
+> DEFINTITION A **variable** associates a value with each individual or object in a population.
+A variable can be either **categorical** or **numerical**, depending on the possible values.
+
+---
+
+
+### Categorical Variables
+
+Categorical variables have relatively few number of possible (whole number) values (2, 3, 4, ...).
+For example, *residence status* for the population of students at a large state university.
+The values are: *resident* and *nonresident*.  Other examples of categorical variables include:
+
+* smoker/nonsmoker
+* race/ethnicity
+* gender
+* month of year
+* favorite ice cream flavor
+* concussions
+* credit rating (good, poor)
+* religious affiliation
+
+##### Example
+
+Consider the residence status for the population of students at a state university.
+Students are either a resident of the state or not (dichotomous).  Plot the distribution
+using a bar chart (see Example 7.1).
+
+<!-- https://statisticsglobe.com/barplot-in-r -->
+<!-- https://www.canva.com/colors/color-palettes/ -->
+
+```{r}
+group = c("Resident", "Nonresident")
+values = c(0.73, 0.27)
+
+width = 1
+
+x = barplot(values, 
+        names.arg = group, 
+        col = c("#A2C4E0", "#FDB750"), 
+        beside=TRUE,
+        xlim = c(0,5), 
+        ylim = c(0,0.8))
+```
+
+
+
+---
+
+### Numerical Variables
+
+
+> DEFINITION Numerical variables can be either **discrete** or **continuous**.  
+A **discrete** variable is one whose possible values are isolated points along a number line.
+Examples of discrete variables include the number of tweets, number of defective items, and the number of people in a checkout line. 
+Typically, whole numbers (1, 2, 3, ...).  **Continuous* variables can take any value within an interval.
+Examples include height, weight, and, temperature.
+
+--- 
+
+```{r}
+values = c(rep(0,52),rep(1,22),rep(2,13), rep(3,9), rep(4,3), rep(5,1))
+hist(values, 
+     breaks = c(-0.5, 0.5, 1.5, 2.5, 3.5, 4.5, 5.5), 
+     col = '#A2C4E0', 
+     main = 'Distribution of Values', 
+     ylim = c(0,60), 
+     freq = TRUE)
+
+```
+
+
+#### 
+
+
+
+--- 
+
+### Summary
+
+When describing data, the center and the spread are two key features.   
+There are many quantities to describe how spread the data is including the range, the variance, the standard deviation, and the interquartile range.  
+
+
+--- 
+
+> DEFINITION: The **mean** value of a numerical variable $X$, denoted by $\mu$, describes the center of the population distribution.  The **standard deviation**, denoted $\sigma$, describes variability in the population distribution.  When $\sigma \approx 0$, the values of $X$ tend to be close to the mean.  (little variability). If $\sigma$ is large, there is more variability in the population of $X$ values.   
+
+---
+
+
+```{r}
+x = rnorm(1000, 6, 2)
+y = rnorm(1000, 11, 2)
+par(mfrow=c(1,2))  
+hist(x)
+hist(y)
+
+#reset par() options
+# dev.off()
+```
+```{r}
+#Create a sequence of 100 equally spaced numbers between -4 and 4
+x = seq(-4, 4, length=100)
+
+#create a vector of values that shows the height of the probability distribution
+#for each value in x
+y = dnorm(x, 0, 1)
+
+#plot x and y as a scatterplot with connected lines (type = "l") and add
+#an x-axis with custom labels
+plot(x,y, type = "l", lwd = 2, axes = FALSE, xlab = "", ylab = "")
+axis(1, at = -4:4, labels = c("-4s", "-3s", "-2s", "-1s", "0", "1s", "2s", "3s", "4s"))
+```
+
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.
