@@ -1,0 +1,147 @@
+---
+title: 'Statistics and Sampling Variability'
+author: "MAT150 - Stats for Life Sciences"
+date: '2022-09-29'
+output: html_document
+---
+
+<style>
+    #header1 {
+        color: #336699;
+    }
+    #normal {color: black;}
+    p{font-size:15px;}
+    h1{font-weight: bold;}
+    h2{color: #336699;}
+    h3{color: #666666;}
+    ul{font-size:14px;}
+    ol{font-size:15px;}
+</style>
+
+
+ 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R Commands covered in this lesson {#header1}
+
+`mean`,`sample`, `read.table`, `hist`, `choose`, `for`
+
+## Statistics
+
+---
+
+> DEFINITION: A **statistic** is a quantity computed from sample data.  The sample mean, $\bar{x}$, sample median, and the sample standard deviation are all examples of statistics.   The value of the statistic will vary depending on the sample.  This variability is called **sample variability**.
+
+---
+
+
+Let $n$ be the sample size.  The **sample mean** is defined as:
+\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i
+\]
+
+
+### Example 8.1
+
+Twenty students book expenses are given in the data below.  We will take samples
+of this data and examine it.  
+
+```{r}
+# Read data
+books = read.table('https://tinyurl.com/bdes8td3', header=TRUE)
+```
+
+
+The population mean is: 
+```{r}
+# Calculate (population) mean of the Amount spent on books
+mean(books$Amount)
+```
+
+Take a sample of 5 students and calculate its mean (use as estimate of population mean).
+```{r}
+# Sample of 5 expense amounts
+x = sample(books$Amount, 5)
+
+# (Sample) Mean of those
+mean(x)
+```
+
+Now, take 100 different samples (of 5) and calculate the mean of each sample.  
+```{r}
+N = 1:100
+
+# Create vector of zeros
+X = rep(0, length(N))
+for (s in N) {
+  X[s] = mean(sample(books$Amount,5))
+}
+
+# Show distribution using a Histogram
+hist(X, main = 'Distribution of Sample Mean', col="#83bae2")
+```
+
+
+Note: there are $\binom{20}{5}$ unique samples of 5.   
+```{r}
+choose(20,5)
+```
+
+
+
+For completeness, calculate the **median** and **standard deviation** of a random sample.  
+```{r}
+median(x)
+sd(x)
+```
+
+
+
+---
+
+> DEFINITION: The distribution that would be formed by considering the value of 
+a sample statistics for every possible different sample of a given size from a population is called the **sampling distribution**.
+
+---
+
+
+
+### Exercises
+
+**8.2** What is the difference between $\bar{x}$ and $\mu$? between $s$ and $\sigma$?
+
+
+
+**8.3** For each of the following statements, identify the number that appears in boldface type as the value of either a population characteristic or a statistic:
+
+  a. A department store reports that **84%** of all customers who use the store's credit plan pay their bills on time.
+
+  b. A sample of 100 students at a large university had a mean age of **24.1** years.
+
+  c. The Department of Motor Vehicles reports that **22%** of all vehicles registered in a particular state are imports.
+
+  d. A hospital reports that based on the 10 most recent cases, the mean length of stay for surgical patients is **6.4** days.
+
+  e. A consumer group, after testing 100 batteries of a certain brand, reported an average life of **63** hours of use.
+
+
+
+---
+
+
+### Summary
+
+We would like to know the value of a population characteristic (i.e., the mean), *however*, it is not feasible (or reasonable) to obtain.  Instead, we *sample* (take a subset), then calculate the value on the sample.  If the sample is drawn randomly, we should expect (depending on sample size), that it is a reasonably good estimation to the actual value.  If we take **ALL** random samples of a certain size, calculate the statistic, and create a histogram, we will see the histogram is fairly symmetric with one hump (i.e., normal).  This histogram is a visualization of the *sample distribution*.  The sample distribution of a statistics (i.e., sample mean $\bar{x}$) provides important information about variation in the values of the statistic. 
+
+
+
+---
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.
