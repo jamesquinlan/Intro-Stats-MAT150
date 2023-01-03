@@ -1,7 +1,7 @@
 ---
 title: "MAT150 - Chapter 1"
 author: "The Role of Statistics and Data Analysis Process"
-date: '09/08/2022'
+date: 'Quinlan, J'
 output: html_document
 ---
 
@@ -25,6 +25,26 @@ knitr::opts_chunk$set(echo = TRUE)
 **Statistics** is the scientific discipline that provides methods to help us make sense of data. 
 
 ---
+
+## Goal of Statistics
+
+The **goal** of statistics is to obtain information about one or more characteristics of a population.
+In other words, **the objective is to make inferences about a population based on information contained in a sample**.
+
+<div align="center">
+<img title="Goal of Statistics" height = "200px" alt="Goal of Statistics" src="figs/pop-sample.png">
+</div>
+
+The **inference** will be used for **decision-making**.
+
+
+---
+
+
+
+## On the role of computers in statistics
+
+Statistical methods involve numerous, lengthy, and tedious numerical calculations. Modern statistics are done on computers (with statistical software packages).  Standard statistical software packages include: S, SAS, SPSS, Minitab, and R.  We use R.  R is a free and "open source" language, meaning the source code is viewable and alterable. As a result, it is highly extensible, with thousands of “packages” written by thousands of users, all of which are freely available.
 
 
 
@@ -204,33 +224,54 @@ forms an entire interval on the number line.
 2. Load data
 3. Create plots
 
+#### File System
 ```{r}
-load("../data/examples/1.6.rda")
+# Get working directory
+getwd()
+```
 
+
+```{r}
+# Set working directory (replace string with your path)
+setwd('/Users/ejames/Documents/MAT150/repo/lectures')
+```
+
+
+#### Load Data
+```{r}
+# ../ means go up one directory.  
+load("../data/examples/1.6.rda")
+```
+
+This next command will rename the third column to "Crimes"
+```{r}
 # rename column
 names(df)[3] = "Crimes"
 ```
+
+
 
 ### Bar Chart (`barplot`)
 
 Use with **categorical data**
 
 
-
 **Example**
 
 ```{r echo=TRUE}
-# plot(df$enrollment,df$Crimes, xlab = "Enrollment", ylab = "Crimes")
+op = par(no.readonly = TRUE)
+#change settings
+par(mar=c(10, 4, 2, 2) + 0.75)
 barplot(df$Crimes, 
         names.arg = df$University.College, 
         main="Crimes",    
         ylab="Freqency",  
         las=2, 
-        cex.names = 0.7, 
+        cex.names = 0.8, 
         col= c("#3CA0D0")
         )
-
 ```
+<!-- https://stackoverflow.com/questions/24511818/r-vertical-x-labels-out-of-plot -->
 
 ---
 
@@ -246,8 +287,22 @@ barplot(helmets$Frequency, names.arg = helmets$Category, col = rainbow(3),
 ```
 
 
+### Numerical Plots
+
+Below is a plot showing the relationship between two numerical variables (enrollment and crime).  A standard question might be, "does high enrollment translate to more crimes?"
+```{r}
+plot(df$enrollment,df$Crimes, 
+     xlab = "Enrollment", 
+     ylab = "Crimes", 
+     pch = 19, 
+     col = 'blue')
+```
 
 
+### Dotplots (`stripchart`)
+
+
+**Use**: Small numerical data sets.
 
 **Example** (Graduation Rates): Graduation rates for 61 NCAA Men's Division 1 
 basketball teams that made it to the tournament along with graduation rates of all
@@ -267,16 +322,141 @@ stripchart(grad_rates$BB,  pch = 21, col = "#336699", bg="lightgreen")
 <!----------------------------------------------------------------------------->
 ## Exercises
 
-1.1 Give a brief definition of the terms *descriptive statistics* and *inferential statistics*.
+##### 1.1 Give a brief definition of the terms *descriptive statistics* and *inferential statistics*.
 
 **Answer**: See page 7.  
 
- 
-1.5.  A university of 15000 students is interested in the proportion of students
-favor changing grade scheme.  Two hundred students are sampled.  What is the
-population of interest and what is the group of students that constitue the sample?
+---
+
+
+
+
+#####  1.2 Give a brief definition of the terms *population* and *sample*.  
+
+
+---
+
+#####  1.3 Travelocity survey showed that 40% of travelers check work e-mail while on vacation, 33% take cell phones on vacation in order to stay connected with work, and 25% bring laptop computers on vactation.  Are these percentages population values or sample values?
+
+**Answer**: Sample
+
+
+---
+
+
+#####  1.5.  A university of 15000 students is interested in the proportion of students favor changing grade scheme.  Two hundred students are sampled.  What is the population of interest and what is the group of students that constitue the sample?
 
 **Answer**: Population is all 15000 students and the sample consists of 200 of them.
+
+---
+
+
+
+
+
+#####  1.12 Classify the following as categorical or numerical. For those that are numerical, determine if they are discrete or continuous:
+
+a. Number of students in a class of 35 who turn in a term paper before the due date. 
+
+**Answer**: Numerical/discrete.
+
+b. Gender of the next baby born at a particular hospital.
+
+**Answer**: Categorical
+
+
+
+c. Amount of fluid dispensed by a machine used to fill bottles with soda. 
+
+**Answer**: Numerical/continuous
+
+
+d. Thickness of the gelatin coating of a vitamin E capsule. 
+
+**Answer**: Numerical and continuous.
+
+
+
+
+e. Birth order classification of a math major. 
+
+**Answer**: Categorical.
+
+---
+
+
+
+
+
+
+#####  1.13 Classify each of the following variables as categorical or numerical. For those that are numerical, determine if they are discrete or continuous.
+
+
+a. brand of computer
+
+**Answer**: Categorical
+
+
+b. State of birth for someone in the US
+
+**Answer**: Categorical
+
+
+
+c. Price of a textbook
+
+**Answer**: Numerical and continuous  
+
+
+d. Concentration of a contaminant
+
+**Answer**: Numerical and continuous
+
+
+
+e. Zip Code
+
+**Answer**: Categorical (ask if you can add two together)
+
+
+
+f. Actual weight of coffee in a 1-pound can
+
+**Answer**: Numerical and continuous.
+
+
+---
+
+
+
+
+
+
+
+
+#####  1.15 For the following numerical variables, state whether each is discrete or continuous.
+
+
+a. The length of a 1 year old rattlesnake
+
+**Answer**: continuous.
+
+
+b. Altitude of a location in California selected randomly
+
+**Answer**: Continuous
+
+
+c. Distance from the left edge where a plastic ruler breaks: 
+
+**Answer**: continuous (measurements such as weight, distance, length, temperature)
+
+
+d. Price per gallon paid by the next customer to buy gas at a particular gas station
+
+**Answer**: continuous
+
+
 
 
 ---
@@ -291,7 +471,7 @@ population of interest and what is the group of students that constitue the samp
 
 
 <!----------------------------------------------------------------------------->
-#### References
+### References
 
 Peck, R., & Devore, J. L. (2011). *Statistics: The exploration & analysis of data*. Cengage Learning.
 
