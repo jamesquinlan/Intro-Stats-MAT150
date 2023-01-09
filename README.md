@@ -7,9 +7,14 @@ Course (MAT150) taught at University of New England.
 In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use statistical software to examine data graphically and perform statistical analyses.  
 
 
+---
+
 ## Objectives
 
 In this course, you will learn fundamentals of graphic and numeric data analysis, inferences about population means, and hypothesis testing that you can use to answer research questions in a variety of experimental situations.  You will also learn how to use a comprehensive statistical software called R (RStudio Cloud) to conduct your analyses, and how to interpret, organize, and explain your results and conclusions in written and verbal formats.  This course fulfills a requirement in the applied mathematics major, data science major, and many other major programs.  It can also be used for a mathematics minor.
+
+
+---
 
 ## Textbook
 
@@ -23,6 +28,9 @@ Peck, R., & Devore, J. (2012). Statistics: The Exploration and Analysis of Data(
   publisher={Cengage Learning}
 }
 ```
+
+---
+
 
 ## Learning Outcomes
 
@@ -52,6 +60,8 @@ Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 - developing mathematical independence and participate in open-ended inquiry;
 - operating current technologies; and
 - learning to read, interpret, analyze, and write proofs.
+
+---
 
 ## Topics
 
