@@ -16,6 +16,7 @@ output: html_document
     h3{color: #666666;}
     ul{font-size:14px;}
     ol{font-size:15px;}
+    .def{text-decoration:underline;}
 </style>
 
 
@@ -120,7 +121,7 @@ variability in the price around the world?
 
 ```{r}
 # Load the data
-load(file="bigmac.rda")
+load(file="../data/bigmac.rda")
 ```
 
 Calculate the mean and deviations.
@@ -161,13 +162,20 @@ This is the **sum of square deviations** formula.
 S_{xx} = \sum_{i}^n (x_i - \bar{x})^2 = (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \dots + (x_n - \bar{x})^2
 \]
 
+---
+
+
 > DEFINITION: The **sample variance** is denoted by $s^2$ and is the sum of the squared deviations from the mean divided by $n-1$ (to be explained later).  This is a kind of "average square deviation".
 Large values of $s^2$ (or $s$) indicate high variability.  
 \[
 s^2 = \frac{S_{xx}}{n-1}.
 \]
 
+---
+
 > DEFINITION: The sample **standard deviation** is the square root of the sample variance, or $s$.  
+
+---
 
 We can compute the sample variance and sample standard deviation in R using the commands `var` and `sd`.  
 In the case of the Big Mac, 
@@ -208,9 +216,19 @@ the 25-50-75%.
 
 ```{r}
 quartiles = quantile(bigmac$Big.Mac.Price, probs = c(0.25, 0.5, 0.75))
-IQR = quartiles[3] - quartiles[1]
-IQR[[1]]
+iqr = quartiles[3] - quartiles[1]
+iqr[[1]]
+IQR(bigmac$Big.Mac.Price)
+
 ```
+
+---
+
+#### Outliers
+
+An **outlier** is a data point that is more than 1.5*IQR from the nearest quartile (ends of box).
+
+An **extreme outlier** is more than 3(IQR) from the nearest quartile (else it is called **mild**)
 
 ---
 
@@ -230,7 +248,7 @@ The Chronicle of Higher Education published data on the percentage of the popula
 with bachelor's degree (or higher) in 2007 for each of the 50 U.S. states and 
 District of Columbia (D.C.).  
 ```{r}
-load(file="ex4_9.rda")
+load(file="../data/ex4_9.rda")
 degrees # variable saved
 ```
 
@@ -239,6 +257,7 @@ degrees # variable saved
 Lets get a summary.
 ```{r}
 summary(degrees)
+# fivenum(degrees)
 ```
 
 
