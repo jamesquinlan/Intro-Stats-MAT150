@@ -1,8 +1,10 @@
 ---
 title: "MAT150 - Chapter 1"
 author: "The Role of Statistics and Data Analysis Process"
-date: 'James Quinlan'
-output: html_document
+date: "James Quinlan"
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 
