@@ -1,0 +1,131 @@
+---
+title: "Graphical Description of Data"
+author: "James Quinlan"
+date: '2022-07-03'
+output: html_document
+---
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Histograms
+<!-- https://r-coder.com/histogram-r/ -->
+
+A **histogram** displays a frequency distribution.  
+**Relative frequency** is computed by dividing the frequency by the total number of observations in the data set. 
+
+```{r}
+set.seed(13)
+x  = rnorm(500)
+hist(x)
+```
+
+#### Example
+
+States differ widely in the percentage of college students who are 
+```{r}
+sat = c(rep(200,97), rep(300,295), rep(400,449), rep(500,454), rep(600,197), rep(700,36))
+# sat = data.frame(Scores = c('200s','300s','400s','500s','600s','700+'),
+                # Freq = c(97296,295693,449238,454497,197741,35663))
+```
+Plot the histogram:
+```{r}
+hist(sat, breaks = c(150,250,350,450,550,650,750))
+```
+
+```{r}
+hist(x, prob = TRUE)   # prob = TRUE density histogram 
+y = seq(min(x), max(x), length = 40)
+f = dnorm(y, mean = mean(x), sd = sd(x))
+lines(y, f, col = "red", lwd = 2)
+```
+The following quantity is often used as a rule-of-thumb for the number of intervals.
+$$
+\text{# of intervals} = \sqrt{\text{# of observations}}
+$$
+
+```{r}
+distance =  c(242.3, 285.4, 220.2, 272.4, 271.1, 269.4,
+              296.7, 241.6, 286.1, 285.9, 259.6, 299.6,
+              263.3, 239.6, 267.8, 273.8, 276.4, 276.2,
+              285.2, 234.5, 260.4, 264.2, 295.1, 274.5,
+              253.8, 251.4, 264.0, 269.2, 281.0, 281.2)
+
+hist(distance, prob = TRUE, main = "Histogram with normal curve")
+x <- seq(min(distance), max(distance), length = 40)
+f <- dnorm(x, mean = mean(distance), sd = sd(distance))
+lines(x, f, col = "red", lwd = 2)
+```
+
+
+
+#### Histogram Shapes
+
+
+The general shape of the histogram (which represents the distribution of the data) is an important characteristic.  
+
+> **Definition**: A histogram is **unimodal** if it has one peak, **bimodal** if there are two, and **multimodal** if there are more than two.   
+
+
+Bimodal distributions usually indicates data consists of two distinct groups of observations.  For example, if the distribution is time between cities, a bimodal histogram probably indicates two different routes.  
+
+
+> **Definition** A unimodal histogram that is not symmetric is **skewed**.  If the right (or upper) tail is elongated, then it is **positively skewed**.  Vice-versa: **negatively skewed**.  
+
+
+```{r}
+set.seed(10)
+x  = cbind(rnorm(200,-10,5), rnorm(5000,5,3))
+hist(x, main = "Bimodal Histogram", col = "lightblue")
+```
+
+#### Histograms with two variables 
+
+```{r}
+set.seed(1)
+
+x <- rnorm(1000)    # First group
+y <- rnorm(1000, 1) # Second group
+
+hist(x, main = "Two variables")
+hist(y, add = TRUE, col = rgb(1, 0, 0, 0.5))
+```
+
+
+---
+
+
+
+
+
+### Scatter Plots
+
+**Scatterplots** consist of measurements or observations on two variables, $x$ and $y$ (e.g., height/weight, square footage / home price, SAT/GPA, etc.). Each pair is represented as a point $(x,y)$ on the graph.  Most frequently we examine scatterplots to identify (or discern) whether a relationship exists between the two variables.    
+
+<!-- https://www.r-bloggers.com/2018/07/how-to-add-trend-lines-in-r-using-plotly/ -->
+
+
+#### Example
+Does there exist a relationship between a figure skaters height and artistic score?
+
+```{r}
+# https://statisticsglobe.com/set-axis-limits-in-r
+load(file="../data/examples/3.20.rda")
+x = df$Height[df$Gender == 'F']
+y = df$Artistic[df$Gender == 'F']
+plot(x,y, xlim = c(156,175), ylim = c(20,45))
+# lines(x, predict(lm(y~x)),col=4)
+```
+
+
+
+
+#### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The exploration & analysis of data*. Cengage Learning.
+
+
