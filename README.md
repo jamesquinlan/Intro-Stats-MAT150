@@ -4,7 +4,7 @@ Course (MAT150) taught at University of New England.
 
 ## Course Description
 
-In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use statistical software to examine data graphically and perform statistical analyses.  
+In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use the statistical software R to examine data graphically and perform statistical analyses.  
 
 
 ---
