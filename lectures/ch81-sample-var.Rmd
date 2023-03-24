@@ -104,8 +104,23 @@ sd(x)
 
 ---
 
-> DEFINITION: The distribution that would be formed by considering the value of 
+> **DEFINITION**: The distribution that would be formed by considering the value of 
 a sample statistics for every possible different sample of a given size from a population is called the **sampling distribution**.
+
+---
+
+
+
+> **THEOREM**: If a random sample of $n$ measurements is drawn from a population that
+is normally distributed with mean $\mu$ and standard deviation $\sigma$, then the sampling distrubition of the sample mean $\bar{x}$ will be normally distrubted with mean $\mu$ and standard deviation (called the **standard error**) SE$(\bar{x}) = \sigma / \sqrt{n}$.
+
+
+---
+
+
+
+> **CENTRAL LIMIT THEOREM**: If a random sample of $n$ measurements is drawn from a **nonnormal** population with fininte mean $\mu$ and standard deviation $\sigma$, then when $n$ is large, the sampling distribution of the sample mean $\bar{x}$ will be approximately normally distrubted with mean $\mu$ and standard error SE$(\bar{x}) = \sigma / \sqrt{n}$.  
+
 
 ---
 
