@@ -1,0 +1,93 @@
+---
+title: 'Paired Samples'
+author: "MAT150 - Stats for Life Sciences"
+date: '2022-09-29'
+output: html_document
+---
+
+<style>
+    #header1 {
+        color: #336699;
+    }
+    #normal {color: black;}
+    p{font-size:15px;}
+    h1{font-weight: bold;}
+    h2{color: #336699;}
+    h3{color: #666666;}
+    ul{font-size:14px;}
+    ol{font-size:15px;}
+</style>
+
+
+ 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### R Commands covered in this lesson {#header1}
+
+`t.test`
+
+### Paired Samples for Comparing Two Populations or Treatement means
+In many cases we are interested in comparing means before and after a treatment or between dependent individuals.  For example, 
+
+* Pre and Post-treatment
+* Twins
+* Husband and wife
+
+
+#### Summary
+
+1. Null Hypotheis,  $H_0: \mu_d = D$
+
+2. Test statistics
+\[
+t = \frac{\bar{x}_d - D}{s / \sqrt{n}}
+\]
+
+
+3. Calulate p-value using $df = n-1$.  
+
+```{r}
+p = pt(t,df,lower.tail = F)   # Right tail test
+p = pt(t,df,lower.tail = T)   # Left tail test
+p = 2*pt(t,df,lower.tail = F) # Two tail, but t > 0
+p = 2*pt(t,df,lower.tail = T) # Two tail, but t < 0
+```
+
+4. Reject $H_0$ if $p < \alpha$.  
+
+---
+
+
+ #### Example
+ 
+```{r}
+memory = read.table('https://raw.githubusercontent.com/jamesquinlan/Intro-Stats-MAT150/main/data/examples/ex11_06.txt', header = T)
+```
+
+
+```{r}
+x = memory$memory_test[memory$test == "pre"]
+y = memory$memory_test[memory$test == "post"]
+results = t.test(x,y,alternative = "less", paired = T, conf.level = 0.95)
+n = length(x)
+tcrit = as.numeric(results$statistic["t"])
+```
+
+#### Confidence Interval
+
+```{r}
+a = mean(x - y) -  tcrit * sd(x - y)/sqrt(n)
+b = mean(x - y) +  tcrit * sd(x - y)/sqrt(n)
+a
+b
+```
+
+
+### References
+
+Peck, R., & Devore, J. L. (2011). *Statistics: The Exploration & Analysis of Data*. Cengage Learning.
