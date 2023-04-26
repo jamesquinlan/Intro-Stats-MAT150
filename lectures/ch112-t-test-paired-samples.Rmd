@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### R Commands covered in this lesson {#header1}
 
-`t.test`
+`t.test`, `pt`, `if`, `print`
 
 ### Paired Samples for Comparing Two Populations or Treatement means
 In many cases we are interested in comparing means before and after a treatment or between dependent individuals.  For example, 
@@ -51,7 +51,7 @@ t = \frac{\bar{x}_d - D}{s / \sqrt{n}}
 
 3. Calulate p-value using $df = n-1$.  
 
-```{r}
+```{md}
 p = pt(t,df,lower.tail = F)   # Right tail test
 p = pt(t,df,lower.tail = T)   # Left tail test
 p = 2*pt(t,df,lower.tail = F) # Two tail, but t > 0
@@ -71,20 +71,69 @@ memory = read.table('https://raw.githubusercontent.com/jamesquinlan/Intro-Stats-
 
 
 ```{r}
-x = memory$memory_test[memory$test == "pre"]
-y = memory$memory_test[memory$test == "post"]
-results = t.test(x,y,alternative = "less", paired = T, conf.level = 0.95)
-n = length(x)
+pre = memory$memory_test[memory$test == "pre"]
+post = memory$memory_test[memory$test == "post"]
+results = t.test(pre, post, 
+                 alternative = "less", 
+                 paired = T, 
+                 conf.level = 0.95)
+n = length(pre)
 tcrit = as.numeric(results$statistic["t"])
 ```
 
 #### Confidence Interval
 
 ```{r}
-a = mean(x - y) -  tcrit * sd(x - y)/sqrt(n)
-b = mean(x - y) +  tcrit * sd(x - y)/sqrt(n)
-a
-b
+a = mean(pre - post) -  tcrit * sd(pre - post)/sqrt(n)
+b = mean(pre - post) +  tcrit * sd(pre - post)/sqrt(n)
+c(a,b)
+```
+
+
+#### Example
+
+Ultrasound is often used as treatment for soft tissue injury.  A range of motion study conducted on knee extension.  The data is: 
+
+```{r}
+pre  = c(31,53,45,57,50,43,32)
+post = c(32,59,46,64,49,45,40)
+```
+
+Given 90% confidence level, is treatment effective?
+
+```{r}
+t.test(pre, post, 
+       paired = T, 
+       alternative = "less", 
+       conf.level = 0.9)
+```
+
+
+#### Exercise
+
+Do men overstate their height in online dating profiles?  We have
+$\bar{x}_d = 0.57$ (profile - actual), $s_d = 0.81$, and $n = 40$.  
+
+The null hypothesis is: $H_0: \mu_d = 0$ and $H_1: \mu_d > 0$.  
+
+```{r}
+# Aggregate Data
+xd = 0.57
+s  = 0.81
+n = 40
+
+# Calculate test statistic
+t = xd/(s/sqrt(n))
+
+# Calculate p-value
+p = pt(t,n-1, lower.tail = F)
+
+# Make Decision
+if(p < 0.05){
+  print("Reject the Null")
+  }else{
+  print("Fail to reject the Null")
+}
 ```
 
 
