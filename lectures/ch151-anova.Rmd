@@ -1,7 +1,7 @@
 ---
 title: "One-way Analysis of Variance in R"
 author: "James Quinlan"
-date: "10/30/2021"
+date: "05/01/2023"
 output:
   html_document: default
   pdf_document: default
@@ -117,29 +117,29 @@ Using this notation, we identity three sums of squares.
 
 1. The **total sum of squares** of the difference between the measurements and overall mean is:
 \[
-{SS}_T = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}) .
+\text{SS}_T = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}) .
 \]
 
 
 2. The **within-sample sum of squares** is computed by: <!-- within-sample variability --> 
 \[
-{SS}_W = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}_i) = (n_1 - 1)s_1^2 + (n_2 - 1)s_2^2 + \cdots + (n_k - 1)s_k^2 .
+\text{SS}_W = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}_i) = (n_1 - 1)s_1^2 + (n_2 - 1)s_2^2 + \cdots + (n_k - 1)s_k^2 .
 \]
 where $s_i^2$ is the sample variance of the $i$th group.  
 
 3. The  **between-sample sum of squares** is evaluated with:
 \[
-{SS}_B = \sum_{i=1}^k {n_i} (\bar{y}_i  -  \bar{y} ) .
+\text{SS}_B = \sum_{i=1}^k {n_i} (\bar{y}_i  -  \bar{y} ) .
 \]
 
-We have, ${SS}_T = {SS}_B + {SS}_W$.  See [4] for proof. Note: several sources express this formula with slightly different notation, specifically, ${SST} = {SSR} + {SSE}$.       
+We have, $\text{SS}_T = \text{SS}_B + \text{SS}_W$.  See [4] for proof. Note: several sources express this formula with slightly different notation, specifically, $\text{SST} = \text{SSR} + \text{SSE}$.       
 
 
 ---
 
 __Fisher's F test statistic__ is,    
 \[
-    F = \frac{{SS}_B / (k-1)}{{SS}_W /(n - k)} = \frac{{MSR}}{{MSE}}
+    F = \frac{\text{SS}_B / (k-1)}{\text{SS}_W /(n - k)} = \frac{\text{MSR}}{\text{MSE}}
 \]
 
 where the numerator is the mean square error in the regression (MSR) and the denominator is the mean square error in the residuals (MSE).  
@@ -549,7 +549,7 @@ The __sources of variation__ are listed in the left column of the table.  These 
 
 ### Conclusions
 
-The critical value of $F_\alpha$ at the $\alpha = 0.05$ level is is $3.119$ with $df_w = 2$ and $df_b=75$ (in R `qf(0.95,2,75)`).  Because the computed value $F = 6.197$ is greater than the critical value, we reject the null hypothesis of equality of the mean scores for the three diets.  The p-value is computed using `1 - pf(6,197,2,75)` and is given in the last columns table under `Pr(>F)` as $0.00323$.  Thus, there is an extremely low probability that the means differ only by chance.  From the three sample means, we observed that the mean weight loss of Diet 3 was larger than both the mean weight loss of Diet 1 and Diet 2. 
+The critical value of $F_\alpha$ at the $\alpha = 0.05$ level is is $3.119$ with $\text{df}_w = 2$ and $\text{df}_b=75$ (in R `qf(0.95,2,75)`).  Because the computed value $F = 6.197$ is greater than the critical value, we reject the null hypothesis of equality of the mean scores for the three diets.  The p-value is computed using `1 - pf(6,197,2,75)` and is given in the last columns table under `Pr(>F)` as $0.00323$.  Thus, there is an extremely low probability that the means differ only by chance.  From the three sample means, we observed that the mean weight loss of Diet 3 was larger than both the mean weight loss of Diet 1 and Diet 2. 
 
 
 

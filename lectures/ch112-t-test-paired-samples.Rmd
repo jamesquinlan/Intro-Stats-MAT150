@@ -1,7 +1,7 @@
 ---
 title: 'Paired Samples'
 author: "MAT150 - Stats for Life Sciences"
-date: '2022-09-29'
+date: '2023-05-01'
 output: html_document
 ---
 
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### R Commands covered in this lesson {#header1}
 
-`t.test`, `pt`, `if`, `print`
+`t.test`, `pt`, `if`, `print`, `mean`, `sd`, `sqrt`, `as.numeric`
 
 ### Paired Samples for Comparing Two Populations or Treatement means
 In many cases we are interested in comparing means before and after a treatment or between dependent individuals.  For example, 
