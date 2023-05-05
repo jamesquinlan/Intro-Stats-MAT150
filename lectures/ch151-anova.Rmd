@@ -117,19 +117,19 @@ Using this notation, we identity three sums of squares.
 
 1. The **total sum of squares** of the difference between the measurements and overall mean is:
 \[
-\text{SS}_T = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}) .
+\text{SS}_T = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y})^2 .
 \]
 
 
 2. The **within-sample sum of squares** is computed by: <!-- within-sample variability --> 
 \[
-\text{SS}_W = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}_i) = (n_1 - 1)s_1^2 + (n_2 - 1)s_2^2 + \cdots + (n_k - 1)s_k^2 .
+\text{SS}_W = \sum_{i=1}^k \sum_{j = 1}^{n_i} (y_{ij} - \bar{y}_i)^2 = (n_1 - 1)s_1^2 + (n_2 - 1)s_2^2 + \cdots + (n_k - 1)s_k^2 .
 \]
 where $s_i^2$ is the sample variance of the $i$th group.  
 
 3. The  **between-sample sum of squares** is evaluated with:
 \[
-\text{SS}_B = \sum_{i=1}^k {n_i} (\bar{y}_i  -  \bar{y} ) .
+\text{SS}_B = \sum_{i=1}^k {n_i} (\bar{y}_i  -  \bar{y} )^2 .
 \]
 
 We have, $\text{SS}_T = \text{SS}_B + \text{SS}_W$.  See [4] for proof. Note: several sources express this formula with slightly different notation, specifically, $\text{SST} = \text{SSR} + \text{SSE}$.       
