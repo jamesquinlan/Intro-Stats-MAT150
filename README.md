@@ -1,17 +1,17 @@
 # Introduction to Statistics (for Life Sciences)
 
-Course (MAT150) taught at University of New England. 
+An introductory statistics course (MAT150)
 
 ## Course Description
 
-In this course, students apply principles of research design and statistics to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, the normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use the statistical software R to examine data graphically and perform statistical analyses.  
+In this course, students apply research design and statistics principles to analyze and interpret data and draw conclusions about experimental situations relevant to the sciences.  Topics include random sampling, graphic and numeric descriptive data analysis, normal distribution, hypothesis testing, t-tests, analysis of variance, correlation, and regression.  Students will use the statistical software R to examine data graphically and perform statistical analyses.  
 
 
 ---
 
 ## Objectives
 
-In this course, students will learn fundamentals of graphic and numeric data analysis, inferences about population means, and hypothesis testing that you can use to answer research questions in a variety of experimental situations.  You will also learn how to use a comprehensive statistical software called R (RStudio Cloud) to conduct your analyses, and how to interpret, organize, and explain your results and conclusions in written and verbal formats.  This course fulfills a requirement in the applied mathematics major, data science major, and many other major programs.  It can also be used for a mathematics minor.
+In this course, students will learn the fundamentals of graphic and numeric data analysis, inferences about population means, and hypothesis testing that they can use to answer research questions in various experimental situations.  You will also learn how to use a comprehensive statistical software called R (RStudio Cloud) to conduct your analyses and interpret, organize, and explain your results and conclusions in written and verbal formats.  This course fulfills a requirement in the applied mathematics major, data science major, and many other major programs.  It can also be used for a mathematics minor.
 
 
 ---
@@ -39,25 +39,23 @@ Upon successful completion of this course, you will be able to:
 2. Describe and apply a variety of random sampling methods.
 3. Summarize data sets numerically and graphically with the aid of technology.
 4. Identify appropriate statistical analyses for different experimental situations with numerical data.
-5. Identify the underlying assumptions and perform inferential hypothesis testing using both manual
-and computer methods of statistical analysis to include: t-tests, analysis of variance, with multiple
-comparisons, correlation, and regression.
+5. Identify the underlying assumptions and perform inferential hypothesis testing using manual and computer statistical analysis methods, including t-tests, analysis of variance, multiple comparisons, correlation, and regression.
 6. Interpret the results of experimental situations based on statistical data analysis.
 7. Recognize some sources of bias and limitations of statistical analysis and inferences.
 8. Apply the understanding of statistics to interpret and evaluate research reported by others.
-9. Discuss and present statistical analysis, including methods, results, conclusions and justifications based on supporting evidence in both verbal and written formats.
+9. Discuss and present statistical analysis, including methods, results, conclusions, and justifications based on supporting evidence in verbal and written formats.
 
 
 Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 - developing their critical thinking and communication skills through activities that teach students how to: 
 	- state problems clearly,
 	- articulate assumptions,
-	- understand the importance of precise definitions, and reason logically to conclusions, 
-	- identify and model essential features of a complex situation, modify models as needed for traceability, and draw valuable conclusions, and 
+	- understand the importance of precise definitions and reason logically to conclusions, 
+	- identify and model essential features of a complex situation, modify models as needed for traceability, draw valuable conclusions, and 
 	- use and compare analytical, visual, and numeracy methods;
 
-- linking theory to practice by being exposed to a variety of contemporary applications in mathematics that motivate and illustrate the concepts they are learning, as well as become aware of connections to other fields (both within and outside of mathematics) and learn to apply mathematical concepts to problems in those fields;
-- developing mathematical independence and participate in open-ended inquiry;
+- linking theory to practice by being exposed to a variety of contemporary applications in mathematics that motivate and illustrate the concepts they are learning, as well as becoming aware of connections to other fields (both within and outside of mathematics) and learning to apply mathematical concepts to problems in those fields;
+- developing mathematical independence and participating in open-ended inquiry;
 - operating current technologies; and
 - learning to read, interpret, analyze, and write proofs.
 
@@ -76,16 +74,16 @@ Furthermore, MAT150 will help students build *mathematical habits of mind* by:
 9. Estimation
 10. Hypothesis testing
 11. Comparing two populations
-12. Ananlysis of variance (ANOVA)
+12. Analysis of variance (ANOVA)
 
 ---
 
 
 ## Core Curriculum
-This course is part of the Core Curriculum that is taken by undergraduates and provides a foundation in key themes in the liberal arts.  It addresses the Quantitative Reasoning (QR) component of the Core and the following QR learning outcomes.  Upon successful completion of this course, students will be able to:
+This course is part of the Core Curriculum taken by undergraduates and provides a foundation in key themes in the liberal arts.  It addresses the Quantitative Reasoning (QR) component of the Core and the following QR learning outcomes.  Upon successful completion of this course, students will be able to:
 
 1. Read and analyze data and draw inferences.
-2. Formulate and solve real-world problems using mathematical and/or statistical models.
+2. Formulate and solve real-world problems using mathematical and statistical models.
 3. Communicate quantitative information using symbolic, numeric, graphic, and verbal representations.
 4. Judge the soundness and accuracy of quantitative results.
 5. Make informed decisions using appropriate digital tools and resources.
